@@ -320,6 +320,12 @@ template {
   justify-content: center;
   margin: 1rem; }
 
+.inputFormMaster {
+  width: 15%; }
+
+.sendData {
+  width: 50%; }
+
 /*Components*/
 .buttonComponent {
   display: flex;
@@ -331,3 +337,31 @@ template {
   border-radius: 0.3em;
   color: #ffffff;
   font-size: 18px; }
+
+.inputComponent {
+  width: 100%; }
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+  left: 15px;
+  bottom: 55px;
+  font-size: 11px;
+  opacity: 1;
+  color: #7c7578; }
+
+.inputText {
+  font-size: 16px;
+  width: 100%;
+  padding: 12px 20px;
+  height: 2rem;
+  display: inline-block;
+  border-radius: 0.3em;
+  border: 1px solid #ccc; }
+
+.floating-label {
+  position: relative;
+  pointer-events: none;
+  left: 20px;
+  bottom: 43px;
+  transition: 0.2s ease all;
+  color: #7c7578; }
