@@ -1,0 +1,11 @@
+.buttonComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: pink;
+  width: 100%;
+  border-radius: $border-radius;
+  color: $fontcolor1;
+  font-size: 18px;
+}

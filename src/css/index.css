@@ -311,6 +311,23 @@ template {
 /*Fonts*/
 /*Containers*/
 .homeContainer {
-  color: #e87d33; }
+  color: #333333; }
+
+.buttonRegister, .buttonLogin {
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem; }
 
 /*Components*/
+.buttonComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: pink;
+  width: 100%;
+  border-radius: 0.3em;
+  color: #ffffff;
+  font-size: 18px; }
