@@ -1,13 +1,14 @@
 .inputComponent{
   width: 100%;
-  .error {
-    color: red;
-    position: relative;
-    bottom: 5.5rem;
-    font-size: 12px;
-    font-style: italic;
-    transition: 0.2s ease all;
-  }
+
+}
+.error {
+  color: red;
+  position: relative;
+  bottom: 0.9rem;
+  font-size: 0.65rem;
+  font-style: italic;
+  transition: 0.2s ease all;
 }
 
 .inputText {
