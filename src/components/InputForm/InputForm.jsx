@@ -12,7 +12,7 @@ function InputForm(props) {
         value={props.value}
         required
       ></input>
-      <span className="floating-label" >{props.title}</span>  
+      <span className="floatingLabel" >{props.title}</span>  
     </div>
   )
 }
