@@ -17,6 +17,12 @@ function Home(props) {
     },1000);
   };
 
+  let goToLogin = () => {
+    setTimeout(() =>{
+      history.push('/login')
+    },1000);
+  };
+
   return (
     <div className="homeContainer">
       <p>Vista Home</p>
@@ -24,7 +30,7 @@ function Home(props) {
       <Button name="Registro"/> 
       </div>
       <div className="buttonLogin">
-      <Button name="Login"/> 
+      <Button name="Login" onClick={() => goToLogin()}/> 
       </div>
     </div>
   )
