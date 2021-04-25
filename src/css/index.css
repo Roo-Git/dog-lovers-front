@@ -340,6 +340,13 @@ template {
 
 .inputComponent {
   width: 100%; }
+  .inputComponent .error {
+    color: red;
+    position: relative;
+    bottom: 5.5rem;
+    font-size: 12px;
+    font-style: italic;
+    transition: 0.2s ease all; }
 
 .inputText {
   font-size: 16px;
