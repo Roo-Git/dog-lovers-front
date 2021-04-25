@@ -326,6 +326,12 @@ template {
 .sendData {
   width: 15%; }
 
+.inputFormMasterLogin {
+  width: 15%; }
+
+.sendDataLogin {
+  width: 15%; }
+
 /*Components*/
 .buttonComponent {
   display: flex;

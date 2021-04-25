@@ -4,6 +4,7 @@ import Button from '../../components/Button/Button';
 import { useHistory } from 'react-router';
 import {port, adopter, login} from '../../api/ApiSQL';
 import axios from 'axios';
+import validate from "../../tools/validate";
 
 function Login(props) {
   
@@ -16,16 +17,23 @@ function Login(props) {
     password: ''
   });
 
+  const [errors, setErrors] = useState({});
+  const [message, setMessage] = useState([]);
+
   // HANDLERS
 
   const handleState = (e) => {
     setCredentials({...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
-  
+    if (Object.keys(errors).length > 0) 
+    setErrors(validate({ ...credentials, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));    
   };
 
   // FUNCTIONS
 
   const toggle = async () => {
+
+    const errs = validate(credentials, "login");
+    setErrors(errs);
 
     let body = {
       email: credentials.email,
@@ -49,12 +57,13 @@ function Login(props) {
 
       <p>Vista Login</p>
 
-      <div className="inputFormMaster">
+      <div className="inputFormMasterLogin">
           <InputForm 
             type='text'
             title="Email"
             name="email"
             onChange={handleState}
+            error={errors.email?.help}
             
           />
           <InputForm 
@@ -62,12 +71,15 @@ function Login(props) {
             title="Password"
             name='password'
             onChange={handleState}
+            error={errors.password?.help}
             
           />
-          <div className="sendData">
-            <Button name="Enviar" onClick={() => toggle()}/>
-          </div>
       </div>
+
+      <div className="sendDataLogin">
+          <Button name="Enviar" onClick={() => toggle()}/>
+      </div>
+
     </div>
   )
 }
