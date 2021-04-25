@@ -13,6 +13,7 @@ function Register(props) {
   const history = useHistory();
 
   const [user, setUser] = useState({
+    username: '',
     email: '',
     password: ''
   });
@@ -29,6 +30,7 @@ function Register(props) {
   const toggle = async () => {
   
   let body = {
+    username: user.username,
     email: user.email,
     password: user.password
   }
@@ -52,6 +54,12 @@ function Register(props) {
       <p>Vista Register</p>
 
       <div className="inputFormMaster">
+          <InputForm 
+            type='text'
+            title="Nombre de Usuario"
+            name='username'
+            onChange={handleState}
+          />
           <InputForm 
             type='text'
             title="Email"
