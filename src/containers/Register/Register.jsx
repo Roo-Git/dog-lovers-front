@@ -15,14 +15,14 @@ function Register(props) {
   const [user, setUser] = useState({
     email: '',
     password: ''
-  })
+  });
 
   // HANDLERS
 
   const handleState = (e) => {
     setUser({...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
   
- }
+ };
 
  // FUNCTIONS
  
