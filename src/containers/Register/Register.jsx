@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import InputForm from '../../components/InputForm/InputForm';
-import Button from '../../components/Button/Button';
-import { useHistory } from 'react-router'
-import {port, adopter} from '../../api/ApiSQL';
-import axios from 'axios'
+import React, { useState } from "react";
+import InputForm from "../../components/InputForm/InputForm";
+import Button from "../../components/Button/Button";
+import { useHistory } from "react-router";
+import {port, adopter} from "../../api/ApiSQL";
+import axios from "axios";
 import validate from "../../tools/validate";
 
 
@@ -20,25 +20,28 @@ function Register(props) {
   });
 
   const [errors, setErrors] = useState({});
-  const [message, setMessage] = useState([]);
 
   // HANDLERS
 
   const handleState = (e) => {
-    setUser({...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value});
+    setUser({...user, [e.target.name]: e.target.value});
     if (Object.keys(errors).length > 0) 
-    setErrors(validate({ ...user, [e.target.name]: e.target.value, [e.target.name]: e.target.value}, "register"));
+    setErrors(validate({ ...user, [e.target.name]: e.target.value}, "register"));
   
  };
 
  // FUNCTIONS
  
-  const toggle = async () => {
+  const toggle = async (ev) => {
+    
+    ev.preventDefault()
 
     const errs = validate(user, "register");
     setErrors(errs);
 
-    if (Object.keys(errs).length > 0) return;
+    if (Object.keys(errs).length > 0) {
+      return;
+    }
   
     let body = {
       username: user.username,
@@ -54,7 +57,7 @@ function Register(props) {
       }
       
     } catch (error) {
-      setMessage('El usuario ya existe.')
+      console.log(error, "El usuario no ha podido ser creado");
     }
 
   };
@@ -64,33 +67,36 @@ function Register(props) {
 
         <p>Vista Register</p>
 
-        <div className="inputFormMaster">
+        <form className="inputFormMaster" onSubmit={toggle}> 
             <InputForm 
-              type='text'
+              type="text"
               title="Nombre de Usuario"
-              name='username'
+              name="username"
               onChange={handleState}
               error={errors.username?.help}
+              value={user.username}
             />
             <InputForm 
-              type='text'
+              type="text"
               title="Email"
               name="email"
               onChange={handleState}
               error={errors.email?.help}
+              value={user.email}
             />
             <InputForm 
-              type='text'
+              type="text"
               title="Password"
-              name='password'
+              name="password"
               onChange={handleState}
               error={errors.password?.help}
+              value={user.password}
             />
-        </div>
+           
+            <Button name="Enviar"/>
+          
+        </form>
 
-        <div className="sendData">
-            <Button name="Enviar" onClick={() => toggle()}/>
-        </div>
 
       </div>
     )

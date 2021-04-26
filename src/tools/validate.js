@@ -10,8 +10,12 @@ export default function validate(fields, context = 'register') {
                 errors[key] = {status: 'error', help: 'Please introduce a valid email.'};
             break;
             case 'password':
-                if(fields[key] === '')
-                errors[key] = {status: 'error', help: 'Please, introduce your password.'};
+              if(fields[key] === '')
+              errors[key] = {status: 'error', help: 'Please, introduce your password.'};
+            break;
+            case 'passwordValidation' :
+              if(fields[key] === '' || fields[key] !== fields.password)
+                  errors[key] = {status: 'error', help: 'The password does not match the original.'};
             break;
 
             default:

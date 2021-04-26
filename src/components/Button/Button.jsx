@@ -2,9 +2,11 @@ import React from 'react'
 
 function Button(props) {
   return (
-    <div className="buttonComponent" onClick={props.onClick}>
-      {props.name}
-    </div>
+    <button className="buttonComponent" onClick={props.onClick}>
+      {props.name} 
+      {props.submit} 
+      {props.type}
+    </button>
   )
 }
 

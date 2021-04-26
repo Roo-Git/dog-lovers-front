@@ -321,16 +321,10 @@ template {
   margin: 1rem; }
 
 .inputFormMaster {
-  width: 15%; }
-
-.sendData {
-  width: 15%; }
+  width: 20%; }
 
 .inputFormMasterLogin {
-  width: 15%; }
-
-.sendDataLogin {
-  width: 15%; }
+  width: 20%; }
 
 /*Components*/
 .buttonComponent {
@@ -343,7 +337,8 @@ template {
   border-radius: 0.3em;
   color: #ffffff;
   font-size: 18px;
-  height: 2.5rem; }
+  height: 2.5rem;
+  border-style: none; }
 
 .inputComponent {
   width: 100%; }
