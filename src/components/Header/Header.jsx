@@ -4,7 +4,7 @@ import dogHeader from '../../img/dogHeader.png';
 function Header(props) {
   return (
     <div className="headerComponent">
-      <img className="logo" src={dogHeader} alt="dogHeader"/>
+      <img className="dogHeader" src={dogHeader} alt="dogHeader"/>
       <div className="title">Dog Lovers</div>
     </div>
   )
