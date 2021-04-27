@@ -1,6 +1,7 @@
-import React from 'react'
-import { useHistory } from 'react-router'
-import Button from '../../components/Button/Button'
+import React from 'react';
+import { useHistory } from 'react-router';
+import Button from '../../components/Button/Button';
+import Header from '../../components/Header/Header';
 
 
 function Home(props) {
@@ -25,6 +26,7 @@ function Home(props) {
 
   return (
     <div className="homeContainer">
+      <Header/>
       <p>Vista Home</p>
       <div className="buttonRegister" onClick={() => goToRegister()}>
       <Button name="Registro"/> 

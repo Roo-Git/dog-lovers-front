@@ -1,0 +1,23 @@
+.headerComponent {
+  width: 100%;
+  background-color: burlywood;
+  display: flex;
+  flex-direction: row;
+};
+
+.logo {
+  width: 10%;
+  margin-left: 20px;
+ 
+};
+
+.title {
+  width: 100%;
+};
+
+.loginHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20px;
+};

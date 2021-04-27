@@ -326,6 +326,16 @@ template {
 .inputFormMasterLogin {
   width: 20%; }
 
+.homeContainer {
+  color: #333333; }
+
+.buttonRegister, .buttonLogin {
+  width: 6rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 1rem; }
+
 /*Components*/
 .buttonComponent {
   display: flex;
@@ -375,3 +385,22 @@ input:not(:focus):valid ~ .floatingLabel {
   font-size: 11px;
   opacity: 1;
   color: #7c7578; }
+
+.headerComponent {
+  width: 100%;
+  background-color: burlywood;
+  display: flex;
+  flex-direction: row; }
+
+.logo {
+  width: 10%;
+  margin-left: 20px; }
+
+.title {
+  width: 100%; }
+
+.loginHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 20px; }
