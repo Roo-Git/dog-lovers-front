@@ -458,6 +458,59 @@ template {
   height: 40px;
   background-color: #f3d394; }
 
+.mainChoice {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3d394;
+  color: white; }
+
+.sectionChoice {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.h1ChoiceMaster {
+  width: 102.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFBF42;
+  border-radius: 0.3em; }
+
+.h1Choice {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.prueba {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 5rem;
+  background-color: red; }
+
+.pruebauno {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  background-color: blue; }
+
+.pruebados {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  background-color: green; }
+
 /*Components*/
 .buttonComponent {
   display: flex;
