@@ -20,6 +20,14 @@
   color: white; 
 }
 
+.sectionHome {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .h1HomeMaster {
   width: 70%;
   display: flex;
@@ -43,10 +51,27 @@
   width: 50%;
 }
 
-.sectionHome {
+
+
+.h2HomeMaster{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFBF42;
+  border-radius: $border-radius;
+  margin-top: 40px;
+}
+
+.h2Home{
   margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.loverDog{
+  width: 60%;
 }
