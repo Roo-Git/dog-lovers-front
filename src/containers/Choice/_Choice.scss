@@ -8,52 +8,55 @@
   color: white; 
 }
 
-.sectionChoice{
-  margin-top: 40px;
+.sectionImgMaster {
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.h1ChoiceMaster{
-  width: 102.5%; //102.5%
+.sitterChoice {
+  width: 10%;
+  font-size: 60px;
+}
+
+.sitterChoice:hover{
+  color: #3E3631;
+  cursor: pointer;
+}
+
+.sitter{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+}
+
+.owner{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+.ownerChoice {
+  width: 10%;
+  font-size: 60px;
+}
+
+.ownerChoice:hover {
+  color: #3E3631;
+  cursor: pointer;
+}
+
+.h1Choice{
+  width: 50%;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #FFBF42;
   border-radius: $border-radius;
-}
-
-.h1Choice {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.prueba {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  height: 5rem;
-  background-color: red;
-}
-
-.pruebauno{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  height: 2rem;
-  background-color: blue;
-}
-
-.pruebados{
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  height: 2rem;
-  background-color:green;
+  font-size: 15px;
 }

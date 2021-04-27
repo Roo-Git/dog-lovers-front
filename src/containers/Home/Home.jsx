@@ -51,7 +51,7 @@ function Home(props) {
         </div>
 
       </div>
-      <div className="spacebar"></div>
+      <div className="spaceBar"></div>
       <Footer/>  
     </div>
   )
