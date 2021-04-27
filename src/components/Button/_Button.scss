@@ -1,13 +1,27 @@
 .buttonComponent {
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   background-color: #3E3631;
   width: 100%;
+  height: 100%;
   border-radius: $border-radius;
   color: $fontcolor1;
+  font-size: 18px;
+  border-style: none;
+}
+
+.buttonComponent:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #3E3631;
+  width: 100%;
+  height: 100%;
+  border-radius: $border-radius;
+  color: #FFBF42;
   font-size: 18px;
   border-style: none;
 }

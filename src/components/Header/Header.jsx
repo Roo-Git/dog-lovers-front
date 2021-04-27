@@ -5,7 +5,7 @@ function Header(props) {
   return (
     <div className="headerComponent">
       <img className="logo" src={dogHeader} alt="dogHeader"/>
-      <div className="title">Dog Watcher's</div>
+      <div className="title">Dog Lovers</div>
     </div>
   )
 }
