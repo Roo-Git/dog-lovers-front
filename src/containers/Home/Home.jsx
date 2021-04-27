@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
+import dogsHome from '../../img/dogsHome.png';
 
 
 function Home(props) {
@@ -17,6 +18,29 @@ function Home(props) {
     <div className="homeContainer">
       <Header/>
       <Navbar/>
+      <div className="mainHome">
+
+        <div className="sectionHome">
+
+          <div className="h1HomeMaster">
+
+              <div className="h1Home">
+                <h1>Do you want to take care of your neighbor's dog?</h1>
+                <h1>Or do you prefer that they take your dog for a walk?</h1>                
+              </div>
+              
+              <img className="dogsHome" src={dogsHome} alt="dogsHome"/>
+
+          </div>
+
+          <h2>Dog lovers is your corner to make new friends, new pals.</h2>
+          <h2>While you finish work, go on vacation, or walk someone else's dog.</h2>
+          <h2>Cause we love time, we love dogs.</h2>
+        </div>
+        
+        
+
+      </div>
 
       
     </div>

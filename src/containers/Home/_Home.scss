@@ -9,3 +9,44 @@
   justify-content: center;
   margin: 1rem;
 }
+
+.mainHome {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3d394;
+  color: white; 
+}
+
+.h1HomeMaster {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFBF42;
+  border-radius: $border-radius;
+}
+
+.h1Home {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.dogsHome{
+  width: 50%;
+}
+
+.sectionHome {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
