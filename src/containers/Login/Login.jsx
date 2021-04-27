@@ -5,6 +5,9 @@ import { useHistory } from "react-router";
 import {port, adopter, login} from "../../api/ApiSQL";
 import axios from "axios";
 import validate from "../../tools/validate";
+import {LOGIN} from '../../redux/types/userType'
+import {connect} from 'react-redux';
+
 
 function Login(props) {
   
@@ -46,8 +49,13 @@ function Login(props) {
       let result = await axios.post(port+adopter+login, body)
       console.log(result, "Usuario logeado con exito")
       if(result){
-        history.push('/user')
-      }
+        props.dispatch({type: LOGIN, payload: result.data});
+        if(result.data){
+          history.push('/user');
+        }else{
+          history.push('/')
+        };
+      };
     }catch (error){
       setMessage("Email o password incorrecto")
     }
@@ -86,4 +94,10 @@ function Login(props) {
     )
 }
 
-export default Login
+const mapStateToProps = state => {
+  return {
+      user : state.userReducer.user,
+  }
+}
+
+export default connect(mapStateToProps)(Login);

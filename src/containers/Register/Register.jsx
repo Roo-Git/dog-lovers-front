@@ -53,7 +53,7 @@ function Register(props) {
       let result = await axios.post(port+adopter, body)
       console.log(result, "Usuario creado con exito")
       if(result){
-        history.push('/')
+        history.push('/login')
       }
       
     } catch (error) {
