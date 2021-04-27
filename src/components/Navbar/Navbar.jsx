@@ -27,11 +27,11 @@ function Navbar(props) {
     <div className="navbarComponent">
 
       <div className="loginNavbar" onClick={() => goToLogin()}>
-        <Button name="Iniciar Sesión"/>
+        <Button name="Sign in"/>
       </div>
 
       <div className="registerNavbar" onClick={() => goToRegister()}>
-        <Button className="registerNavbar" name="Regístrate"/>
+        <Button name="Sign up"/>
       </div>
       
 

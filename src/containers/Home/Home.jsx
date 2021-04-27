@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
 import Navbar from '../../components/Navbar/Navbar';
+import Footer from '../../components/Footer/Footer';
 import dogsHome from '../../img/dogsHome.png';
 import loverDog from '../../img/loverDog.png';
 
@@ -50,7 +51,8 @@ function Home(props) {
         </div>
 
       </div>
-  
+      <div className="spaceBar"></div>
+      <Footer/>  
     </div>
   )
 }
