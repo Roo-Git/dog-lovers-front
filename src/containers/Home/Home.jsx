@@ -32,6 +32,7 @@ function Home(props) {
       <div className="buttonLogin">
       <Button name="Login" onClick={() => goToLogin()}/> 
       </div>
+      
     </div>
   )
 }
