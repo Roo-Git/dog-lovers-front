@@ -10,9 +10,9 @@ function Navbar(props) {
 
     // FUNCTIONS
   
-    let goToRegister = () => {
+    let goToChoice = () => {
       setTimeout(() =>{
-          history.push('/register')
+          history.push('/choice')
       },1000);
     };
   
@@ -30,7 +30,7 @@ function Navbar(props) {
         <Button name="Sign in"/>
       </div>
 
-      <div className="registerNavbar" onClick={() => goToRegister()}>
+      <div className="registerNavbar" onClick={() => goToChoice()}>
         <Button name="Sign up"/>
       </div>
       
