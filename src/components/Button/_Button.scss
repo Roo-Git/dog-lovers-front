@@ -1,13 +1,13 @@
 .buttonComponent {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: pink;
+  background-color: #3E3631;
   width: 100%;
   border-radius: $border-radius;
   color: $fontcolor1;
   font-size: 18px;
-  height: 2.5rem;
   border-style: none;
 }

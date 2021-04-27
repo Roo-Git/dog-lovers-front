@@ -1,18 +1,23 @@
 .headerComponent {
   width: 100%;
-  background-color: burlywood;
+  background-color: #FFBF42;
   display: flex;
   flex-direction: row;
 };
 
 .logo {
   width: 10%;
-  margin-left: 20px;
+  margin-left: 30px;
  
 };
 
 .title {
   width: 100%;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  margin: auto;
+  font-size: 100px;
 };
 
 .loginHeader {

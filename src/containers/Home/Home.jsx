@@ -2,6 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import Button from '../../components/Button/Button';
 import Header from '../../components/Header/Header';
+import Navbar from '../../components/Navbar/Navbar';
 
 
 function Home(props) {
@@ -27,7 +28,7 @@ function Home(props) {
   return (
     <div className="homeContainer">
       <Header/>
-      <p>Vista Home</p>
+      <Navbar/>
       <div className="buttonRegister" onClick={() => goToRegister()}>
       <Button name="Registro"/> 
       </div>
