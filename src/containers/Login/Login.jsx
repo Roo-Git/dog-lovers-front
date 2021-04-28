@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
 import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
 import { useHistory } from "react-router";
 import {port, adopter, login} from "../../api/ApiSQL";
 import axios from "axios";
@@ -64,32 +66,48 @@ function Login(props) {
 
     return (
       <div className="loginContainer">
+        <Header/>
+        <div className="navbarComponent"></div>
 
-        <p>Vista Login</p>
-
-        <form className="inputFormMasterLogin" onSubmit={toggle}>
+        <form className="loginForm" onSubmit={toggle}>
+          <h2>Lover Login</h2>
+          <p>We need your data</p>
+          <p>For make money</p>
+          <div className="input">
             <InputForm 
-              type='text'
-              title="Email"
-              name="email"
-              onChange={handleState}
-              error={errors.email?.help ? errors.email.help : message}
-              value={credentials.email.help}
-              
-            />
+                type='text'
+                title="Email"
+                name="email"
+                onChange={handleState}
+                error={errors.email?.help ? errors.email.help : message}
+                value={credentials.email.help}
+                
+              />
+          </div>
+          <div className="input">
             <InputForm 
-              type='text'
-              title="Password"
-              name='password'
-              onChange={handleState}
-              error={errors.password?.help ? errors.password.help : message}
-              value={credentials.password}
+                type='text'
+                title="Password"
+                name='password'
+                onChange={handleState}
+                error={errors.password?.help ? errors.password.help : message}
+                value={credentials.password}
 
-            />
-
-            <Button name="Enviar"/>
+              />
+          </div>
+          <div className="submit">
+              <Button name="Submit"/> 
+            </div>
+            <div className="closeForm"></div>
         </form>
 
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        
+        <Footer/>
       </div>
     )
 }

@@ -70,41 +70,39 @@ function Register(props) {
         <Header/>
         <div className="navbarComponent"></div>
 
-        <div className="spacebar"></div>
-
         <form className="registerForm" onSubmit={toggle}>
             <h2>Lover Registration</h2>
             <p>We need your data</p>
             <p>For make money</p>
             <div className="input">
-            <InputForm 
-              type="text"
-              title="Username"
-              name="username"
-              onChange={handleState}
-              error={errors.username?.help}
-              value={user.username}
-            />
+              <InputForm 
+                type="text"
+                title="Username"
+                name="username"
+                onChange={handleState}
+                error={errors.username?.help}
+                value={user.username}
+              />
             </div>
             <div className="input">
-            <InputForm 
-              type="text"
-              title="Email"
-              name="email"
-              onChange={handleState}
-              error={errors.email?.help}
-              value={user.email}
-            />
+              <InputForm 
+                type="text"
+                title="Email"
+                name="email"
+                onChange={handleState}
+                error={errors.email?.help}
+                value={user.email}
+              />
             </div>
             <div className="input">
-            <InputForm 
-              type="text"
-              title="Password"
-              name="password"
-              onChange={handleState}
-              error={errors.password?.help}
-              value={user.password}
-            />
+              <InputForm 
+                type="text"
+                title="Password"
+                name="password"
+                onChange={handleState}
+                error={errors.password?.help}
+                value={user.password}
+              />
             </div>
             <div className="submit">
               <Button name="Submit"/> 
