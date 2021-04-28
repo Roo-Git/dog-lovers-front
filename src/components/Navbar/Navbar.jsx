@@ -1,13 +1,13 @@
 import React from 'react'
 import Button from '../Button/Button';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
 
 function Navbar(props) {
 
+
     // HOOKS
     let history = useHistory();
-
 
     // FUNCTIONS
   
@@ -26,17 +26,24 @@ function Navbar(props) {
 
   return (
     <div className="navbarComponent">
-      <div className="usernameRedux">Hola! {props.user.username}</div>
-
-      <div className="loginNavbar" onClick={() => goToLogin()}>
-        <Button name="Sign in"/>
-      </div>
-
-      <div className="registerNavbar" onClick={() => goToChoice()}>
-        <Button name="Sign up"/>
-      </div>
       
+      {
+        !props.user.id
+        ?
+        <>
+          <div className="loginNavbar" onClick={() => goToLogin()}>
+            <Button name="Sign in"/>
+          </div>
 
+          <div className="registerNavbar" onClick={() => goToChoice()}>
+            <Button name="Sign up"/>
+          </div>
+        </>
+        :
+        <>
+          <div className="usernameRedux">Hola! {props.user.username}</div>
+        </>
+      }
       
     </div>
   )
