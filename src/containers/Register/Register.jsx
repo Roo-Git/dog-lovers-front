@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
 import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
 import { useHistory } from "react-router";
 import {port, adopter} from "../../api/ApiSQL";
 import axios from "axios";
@@ -46,7 +48,8 @@ function Register(props) {
     let body = {
       username: user.username,
       email: user.email,
-      password: user.password
+      password: user.password,
+      firstName: user.firstName
     }
       
     try {
@@ -64,18 +67,26 @@ function Register(props) {
 
     return (
       <div className="registerContainer">
+        <Header/>
+        <div className="navbarComponent"></div>
 
-        <p>Vista Register</p>
+        <div className="spacebar"></div>
 
-        <form className="inputFormMaster" onSubmit={toggle}> 
+        <form className="registerForm" onSubmit={toggle}>
+            <h2>Lover Registration</h2>
+            <p>We need your data</p>
+            <p>For make money</p>
+            <div className="input">
             <InputForm 
               type="text"
-              title="Nombre de Usuario"
+              title="Username"
               name="username"
               onChange={handleState}
               error={errors.username?.help}
               value={user.username}
             />
+            </div>
+            <div className="input">
             <InputForm 
               type="text"
               title="Email"
@@ -84,6 +95,8 @@ function Register(props) {
               error={errors.email?.help}
               value={user.email}
             />
+            </div>
+            <div className="input">
             <InputForm 
               type="text"
               title="Password"
@@ -92,10 +105,21 @@ function Register(props) {
               error={errors.password?.help}
               value={user.password}
             />
-           
-            <Button name="Enviar"/>
-          
+            </div>
+            <div className="submit">
+              <Button name="Submit"/> 
+            </div>
+            <div className="closeForm"></div>
         </form>
+
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        <div className="spaceBar"></div>
+        
+        <Footer/>
+
+
+
 
 
       </div>
@@ -104,3 +128,16 @@ function Register(props) {
 
 
 export default Register;
+
+
+/*
+            <InputForm 
+              type="text"
+              title="FirstName"
+              name="firstName"
+              onChange={handleState}
+              error={errors.firstName?.help}
+              value={user.firstName}
+            />
+            </div>
+*/
