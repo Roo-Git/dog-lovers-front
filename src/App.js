@@ -6,6 +6,7 @@ import Login from './containers/Login/Login';
 import User from './containers/User/User';
 import Choice from './containers/Choice/Choice';
 
+
 function App() {
   return (
     <div className="App">
@@ -16,7 +17,7 @@ function App() {
         <Route path="/register" exact component={Register}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/user" exact component={User}/>
-        <Route path="/choice" exact component={Choice}/>
+        <Route path="/choice" exact component={Choice}/>        
       </Switch>
       
       </BrowserRouter>

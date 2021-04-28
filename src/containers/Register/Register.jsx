@@ -15,11 +15,18 @@ function Register(props) {
   
   const history = useHistory();
 
+  let sitter = JSON.parse(localStorage.getItem('sitter'))
+
+  // lo parseamos para que sea booleano.
+  
   const [user, setUser] = useState({
     username: '',
     email: '',
-    password: ''
+    password: '',
+    sitter: sitter
   });
+
+  console.log(user.sitter)
 
   const [errors, setErrors] = useState({});
 
@@ -49,8 +56,9 @@ function Register(props) {
       username: user.username,
       email: user.email,
       password: user.password,
-      firstName: user.firstName
+      sitter: user.sitter
     }
+    console.log(body)
       
     try {
       let result = await axios.post(port+adopter, body)
@@ -113,7 +121,6 @@ function Register(props) {
         <div className="spaceBar"></div>
         <div className="spaceBar"></div>
         <div className="spaceBar"></div>
-        
         <Footer/>
 
 

@@ -13,11 +13,13 @@ function Choice(props) {
 
   // FUNCTIONS
     
-  let goToRegister = () => {
+  let goToRegister = (boolean) => {
     setTimeout(() =>{
+        localStorage.setItem('sitter', boolean)
         history.push('/register')
     },1000);
   };
+
 
   return (
     <div className="choiseComponent">
@@ -29,10 +31,10 @@ function Choice(props) {
         <div className="spaceBar"></div>
 
         <div className="sectionImgMaster">
-          <h1 className="sitterChoice">I'm a baby sitter!</h1>
+          <h1 className="sitterChoice"onClick={() => goToRegister(true)}>I'm a baby sitter!</h1>
           <img className="sitter" src={sitter} alt="sitter"/>
           <img className="owner" src={owner} alt="owner"/>
-          <h1 className="ownerChoice"onClick={goToRegister}>I'm a dog owner!</h1>
+          <h1 className="ownerChoice"onClick={() => goToRegister(false)}>I'm a dog owner!</h1>
         </div>
 
         <div className="navbarComponent"></div>
