@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from '../Button/Button';
+import { LOGOUT } from '../../redux/types/userType';
 import { useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
 
@@ -23,6 +24,13 @@ function Navbar(props) {
       },1000);
     };
 
+    const logOut = () => {
+      props.dispatch({ type: LOGOUT, payload : {}});
+      setTimeout(()=> {
+          history.push('/');
+      },1000);
+    }
+
 
   return (
     <div className="navbarComponent">
@@ -42,6 +50,9 @@ function Navbar(props) {
         :
         <>
           <div className="usernameRedux">Hola! {props.user.username}</div>
+          <div className="logoutNavbar" onClick={() => logOut()}>
+            <Button name="Logout"/>
+          </div>
         </>
       }
       
