@@ -1,6 +1,7 @@
 import React from 'react'
 import Button from '../Button/Button';
 import { useHistory } from 'react-router';
+import {connect} from 'react-redux';
 
 function Navbar(props) {
 
@@ -25,6 +26,7 @@ function Navbar(props) {
 
   return (
     <div className="navbarComponent">
+      <div className="usernameRedux">Hola! {props.user.username}</div>
 
       <div className="loginNavbar" onClick={() => goToLogin()}>
         <Button name="Sign in"/>
@@ -40,4 +42,10 @@ function Navbar(props) {
   )
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  return {
+      user : state.userReducer.user,
+  }
+}
+
+export default connect(mapStateToProps)(Navbar);

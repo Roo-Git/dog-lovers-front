@@ -668,6 +668,9 @@ input:not(:focus):valid ~ .floatingLabel {
   width: 8%;
   margin-right: 40px; }
 
+.usernameRedux {
+  color: white; }
+
 .footerComponent {
   display: flex;
   flex-direction: row;

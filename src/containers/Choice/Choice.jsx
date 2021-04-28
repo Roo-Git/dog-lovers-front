@@ -5,6 +5,7 @@ import owner from '../../img/owner.png'
 import Footer from '../../components/Footer/Footer'
 import { useHistory } from 'react-router';
 
+
 function Choice(props) {
 
   // HOOKS
