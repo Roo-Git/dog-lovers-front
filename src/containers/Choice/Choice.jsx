@@ -3,14 +3,13 @@ import Header from '../../components/Header/Header'
 import sitter from '../../img/sitter.png'
 import owner from '../../img/owner.png'
 import Footer from '../../components/Footer/Footer'
-import { useHistory } from 'react-router';
 import { Link } from 'react-router-dom'
 
 
 function Choice(props) {
 
   // HOOKS
-  let history = useHistory();
+  
 
 
   // FUNCTIONS
