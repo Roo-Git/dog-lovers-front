@@ -4,6 +4,7 @@ import sitter from '../../img/sitter.png'
 import owner from '../../img/owner.png'
 import Footer from '../../components/Footer/Footer'
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom'
 
 
 function Choice(props) {
@@ -14,13 +15,6 @@ function Choice(props) {
 
   // FUNCTIONS
     
-  let goToRegister = (boolean) => {
-    setTimeout(() =>{
-        localStorage.setItem('sitter', boolean)
-        history.push('/register')
-    },1000);
-  };
-
 
   return (
     <div className="choiseComponent">
@@ -32,10 +26,12 @@ function Choice(props) {
         <div className="spaceBar"></div>
 
         <div className="sectionImgMaster">
-          <h1 className="sitterChoice"onClick={() => goToRegister(true)}>I'm a baby sitter!</h1>
+          
+          <Link className="sitterChoice" to="/register?sitter=true">I'm a baby sitter!</Link>        
           <img className="sitter" src={sitter} alt="sitter"/>
           <img className="owner" src={owner} alt="owner"/>
-          <h1 className="ownerChoice"onClick={() => goToRegister(false)}>I'm a dog owner!</h1>
+          <Link className="ownerChoice" to="/register">I'm a dog owner!</Link>
+          
         </div>
 
         <div className="navbarComponent"></div>

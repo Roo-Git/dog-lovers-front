@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import {port, adopter} from "../../api/ApiSQL";
 import axios from "axios";
 import validate from "../../tools/validate";
@@ -12,13 +12,14 @@ import validate from "../../tools/validate";
 function Register(props) {
   
   // HOOKS
+
+  
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const sitter = Boolean(params.get('sitter'))
   
   const history = useHistory();
 
-  let sitter = JSON.parse(localStorage.getItem('sitter'))
-
-  // lo parseamos para que sea booleano.
-  
   const [user, setUser] = useState({
     username: '',
     email: '',
