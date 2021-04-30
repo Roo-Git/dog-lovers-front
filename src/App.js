@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './containers/Home/Home';
 import Register from './containers/Register/Register';
 import Login from './containers/Login/Login';
-import User from './containers/User/User';
+import Owner from './containers/Owner/Owner';
 import Choice from './containers/Choice/Choice';
 
 
@@ -16,7 +16,7 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/register" exact component={Register}/>
         <Route path="/login" exact component={Login}/>
-        <Route path="/user" exact component={User}/>
+        <Route path="/owner" exact component={Owner}/>
         <Route path="/choice" exact component={Choice}/>        
       </Switch>
       

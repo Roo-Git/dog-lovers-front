@@ -53,7 +53,7 @@ function Login(props) {
       if(result){
         props.dispatch({type: LOGIN, payload: result.data});
         if(result.data){
-          history.push('/user');
+          history.push('/');
         }else{
           history.push('/')
         };
