@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
-import Button from "../../components/Button/Button";
+import PersonalButton from "../../components/PersonalButton/PersonalButton";
 import Footer from "../../components/Footer/Footer";
 import { useHistory, useLocation } from "react-router";
 import {port, adopter} from "../../api/ApiSQL";
@@ -114,7 +114,7 @@ function Register(props) {
               />
             </div>
             <div className="submit">
-              <Button name="Submit"/> 
+              <PersonalButton name="Submit"/> 
             </div>
             <div className="closeForm"></div>
         </form>

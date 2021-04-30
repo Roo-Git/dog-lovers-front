@@ -1,13 +1,13 @@
 import React from 'react'
-import Button from '../Button/Button';
-import { LOGOUT } from '../../redux/types/userType';
 import { useHistory } from 'react-router-dom';
+import PersonalButton from '../PersonalButton/PersonalButton';
 import {connect} from 'react-redux';
+import MenuMaterialUi from '../../components/MenuMaterialUi/MenuMaterialUi';
 
 function Navbar(props) {
 
-
     // HOOKS
+
     let history = useHistory();
 
     // FUNCTIONS
@@ -24,13 +24,6 @@ function Navbar(props) {
       },1000);
     };
 
-    const logOut = () => {
-      props.dispatch({ type: LOGOUT, payload : {}});
-      setTimeout(()=> {
-          history.push('/');
-      },1000);
-    }
-
 
   return (
     <div className="navbarComponent">
@@ -40,19 +33,17 @@ function Navbar(props) {
         ?
         <>
           <div className="loginNavbar" onClick={() => goToLogin()}>
-            <Button name="Sign in"/>
+            <PersonalButton name="Sign in"/>
           </div>
 
           <div className="registerNavbar" onClick={() => goToChoice()}>
-            <Button name="Sign up"/>
+            <PersonalButton name="Sign up"/>
           </div>
         </>
         :
         <>
+          <MenuMaterialUi></MenuMaterialUi>
           <div className="usernameRedux">Hola! {props.user.username}</div>
-          <div className="logoutNavbar" onClick={() => logOut()}>
-            <Button name="Logout"/>
-          </div>
         </>
       }
       

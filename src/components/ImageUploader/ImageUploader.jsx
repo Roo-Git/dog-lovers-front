@@ -46,13 +46,3 @@ const App = props => {
 };
 
 export default App;
-
-
-
-/*
-      style={{
-        width: 700,
-        height: 500,
-        background: 'gold'
-      }}
-  */

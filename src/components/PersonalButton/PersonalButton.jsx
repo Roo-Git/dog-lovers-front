@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button(props) {
+function PersonalButton(props) {
   return (
     <button className="buttonComponent" onClick={props.onClick}>
       {props.name} 
@@ -10,4 +10,4 @@ function Button(props) {
   )
 }
 
-export default Button
+export default PersonalButton
