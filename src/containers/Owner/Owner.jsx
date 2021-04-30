@@ -19,6 +19,7 @@ function Owner(props) {
     description: '',
     
   });
+  console.log(props, "Que nos traen las props?")
 
   const handleState = (ev) => {
     setDog ({...dog, [ev.target.name]: ev.target.value})
@@ -29,7 +30,7 @@ function Owner(props) {
     ev.preventDefault()
 
     let body = {
-      user_Id: props.user.Id,
+      user_Id: props.user.id,
       name: dog.name,
       gender: dog.gender,
       breed: dog.breed,
@@ -38,7 +39,7 @@ function Owner(props) {
       description: dog.description
     };
 
-    console.log(body, "Hola")
+    console.log(body, "======BODY")
 
     try {
       let id = props.user.id
