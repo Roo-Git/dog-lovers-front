@@ -4,3 +4,4 @@ export const login = '/login';
 export const query = '?query=';
 export const logout = '/logout';
 export const update = '/update';
+export const pet = '/dogs';
