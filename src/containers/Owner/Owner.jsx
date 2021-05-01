@@ -29,8 +29,6 @@ function Owner(props) {
         <Navbar/>
         <div className="target">Hola! {props.dog.name}, {props.dog.gender}</div>
         
-        
-        
         </>
       }
     </div>
