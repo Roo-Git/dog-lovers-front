@@ -14,11 +14,12 @@ function Owner(props) {
   return (
     <div className="ownerContainer">
       {
-        !props.user.id
+        !props.dog.user_Id
         ?
         <>
         <Header/>
         <Navbar/>
+        <DogForm/>
         
         
         </>
@@ -26,8 +27,10 @@ function Owner(props) {
         <>
         <Header/>
         <Navbar/>
-        <DogForm/>
-        Hola! {props.dog.name}, {props.dog.gender}
+        <div className="probando">Hola! {props.dog.name}, {props.dog.gender}</div>
+        
+        
+        
         </>
       }
     </div>
