@@ -549,6 +549,9 @@ template {
   border-radius: 0.3em;
   font-size: 15px; }
 
+.target {
+  background-color: red; }
+
 /*Components*/
 .buttonComponent {
   display: flex;
