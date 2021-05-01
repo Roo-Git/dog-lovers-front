@@ -1,7 +1,7 @@
 import { SHOW } from '../types/dogType';
 
 const initialState = {
-    dog: {}
+    dog: {},
 
 };
 
@@ -10,7 +10,7 @@ const dogReducer = (state = initialState, action) => {
         case SHOW :
             return {
                 ...state,
-                dog : action.payload.dog
+                dog : action.payload
             }            
         default :
             return state

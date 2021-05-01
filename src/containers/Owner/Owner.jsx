@@ -20,12 +20,14 @@ function Owner(props) {
         <Header/>
         <Navbar/>
         
+        
         </>
         :
         <>
         <Header/>
         <Navbar/>
         <DogForm/>
+        Hola! {props.dog.name}, {props.dog.gender}
         </>
       }
     </div>
@@ -35,6 +37,7 @@ function Owner(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      dog  : state.dogReducer.dog
   }
 }
 

@@ -1,6 +1,7 @@
 import React, { useState} from 'react'
 import axios from 'axios';
 import {connect} from 'react-redux';
+import {SHOW} from '../../redux/types/dogType'
 import InputForm from "../../components/InputForm/InputForm";
 import PersonalButton from "../../components/PersonalButton/PersonalButton";
 import {port, pet} from "../../api/ApiSQL";
@@ -43,6 +44,9 @@ function DogForm(props) {
       let id = props.user.id
       let result = await axios.post(`${port}${pet}/${id}`, body)
       console.log(result, 'Perro creado con exito')
+      if(result){
+        props.dispatch({type: SHOW, payload: result.data})
+      }
 
     }catch (error){
       console.log(error, 'El perr@ no ha podido ser creado')
@@ -120,6 +124,7 @@ function DogForm(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      dog  : state.dogReducer.dog
   }
 }
 
