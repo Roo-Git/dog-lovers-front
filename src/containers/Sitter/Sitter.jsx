@@ -14,7 +14,7 @@ function Sitter (props) {
   });
 
 
-
+  
   const getAllRequest = async () => {
     
 
@@ -29,7 +29,9 @@ function Sitter (props) {
 
   useEffect(()=>{
     getAllRequest();
-  },[]);
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  
 
   return (
     <div className="sitterComponent">
