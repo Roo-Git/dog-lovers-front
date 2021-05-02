@@ -1,35 +1,52 @@
 import axios from 'axios';
-import React, {useState}from 'react'
+import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
 import {connect} from 'react-redux';
 import { careRequest, port } from '../../api/ApiSQL';
 
 
-function Sitter(props) {
-  const [request, setRequest] = useState()
+function Sitter (props) {
 
-  const handleState = (ev) => {
-    setRequest ({...request, [ev.target.name]: ev.target.value})
-  };
-  const toggle = async (ev) => {
-    ev.preventDefault()
+  
+  const [requests, setRequests] = useState({
+    index: []
+  });
+
+
+
+  const getAllRequest = async () => {
+    
 
     try{
       let result = await axios.get(`${port}${careRequest}`)
-      console.log(result, "Requests obtenidas con exito")
-      if(result){
-      }
+      console.log(result.data, "Requests obtenidas con exito")
+      setRequests({...requests, index: result.data})
     } catch(error) {
       console.log(error, 'Las request no han podido ser obtenidas')
     }
  };
+
+  useEffect(()=>{
+    getAllRequest();
+  },[]);
+
   return (
     <div className="sitterComponent">
       <Header/>
-      <Navbar/> 
-      <p>Vista Sitter</p>
-      <button onChange={handleState} onClick={toggle}></button>
+      <Navbar/>
+      {
+
+      requests.index.map(request =>{
+        return(        
+        <div key={request.id}>
+          <p>POST: {request.post}</p>
+        </div>)
+
+      })
+      
+      }
+      
     </div>
   )
 }
