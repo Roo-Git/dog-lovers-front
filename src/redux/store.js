@@ -12,6 +12,7 @@ const store = createStoreWithMiddleware(
         preloadState : {
             user : {},
             dog : {},
+            request : {},
 
         },
         state: ['dataUser']

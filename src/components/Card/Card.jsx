@@ -2,6 +2,7 @@ import React from 'react'
 import footPrint from '../../img/footPrint.png';
 import {connect} from 'react-redux';
 import PersonalButton from '../PersonalButton/PersonalButton';
+//import RequestForm from '../RequestForm/RequestForm';
 
 function Card(props) {
 
@@ -28,6 +29,7 @@ function Card(props) {
 
       </div>
         <div className="navbarComponent"></div>
+        
     </div>
 
   )
