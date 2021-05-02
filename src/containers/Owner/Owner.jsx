@@ -24,6 +24,7 @@ function Owner(props) {
         <DogForm/>
         
         
+        
         </>
         :
         <>
@@ -41,7 +42,9 @@ function Owner(props) {
 
 const mapStateToProps = state => {
   return {
-      dog  : state.dogReducer.dog
+    user : state.userReducer.user,
+    dog  : state.dogReducer.dog,
+    request : state.requestReducer.request
   }
 }
 

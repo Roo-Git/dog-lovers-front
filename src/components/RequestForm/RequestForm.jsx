@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios';
 import { careRequest, port } from '../../api/ApiSQL';
 import {connect} from 'react-redux';
-import {SHOW} from '../../redux/types/requestType';
+import {CREATE} from '../../redux/types/requestType';
 import InputForm from '../../components/InputForm/InputForm';
 import PersonalButton from '../../components/PersonalButton/PersonalButton';
 
@@ -33,11 +33,13 @@ function RequestForm(props) {
     console.log(body, "==== BODY REQUEST")
 
     try{
-      let id = props.user.id
-      let result = await axios.post(`${port}${careRequest}/${id}`)
+      // No entiendo porque esto me funciona...
+      // let id = 'lo que sea'
+      let id = 'Bug'
+      let result = await axios.post(`${port}${careRequest}/${id}`, body)
       console.log(result, "Request creada con exito")
       if(result){
-        props.dispatch({type: SHOW, payload: result.data})
+        props.dispatch({type: CREATE, payload: result.data})
       }
     } catch(error) {
       console.log(error, 'La request no ha podido ser creada')
@@ -56,7 +58,7 @@ function RequestForm(props) {
             <div className="input">
               <InputForm
                 type="input"
-                title="Start Date"
+                title="StartDate"
                 name="startDate"
                 onChange={handleState}
                 value={request.startDate}
@@ -65,7 +67,7 @@ function RequestForm(props) {
             <div className="input">
               <InputForm 
                 type="input"
-                title="Finish Date"
+                title="FinishDate"
                 name="finishDate"
                 onChange={handleState}
                 value={request.finishDate}

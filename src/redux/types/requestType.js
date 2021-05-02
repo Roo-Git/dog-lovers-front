@@ -1,1 +1,1 @@
-export const SHOW = 'show';
+export const CREATE = 'create';

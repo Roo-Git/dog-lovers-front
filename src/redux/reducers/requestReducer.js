@@ -1,4 +1,4 @@
-import { SHOW } from '../types/requestType';
+import { CREATE } from '../types/requestType';
 
 const initialState = {
     request: {},
@@ -7,7 +7,7 @@ const initialState = {
 
 const requestReducer = (state = initialState, action) => {
     switch(action.type){
-        case SHOW :
+        case CREATE :
             return {
                 ...state,
                 request : action.payload
