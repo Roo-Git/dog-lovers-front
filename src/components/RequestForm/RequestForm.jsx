@@ -33,10 +33,7 @@ function RequestForm(props) {
     console.log(body, "==== BODY REQUEST")
 
     try{
-      // No entiendo porque esto me funciona...
-      // let id = 'lo que sea'
-      let id = 'Bug'
-      let result = await axios.post(`${port}${careRequest}/${id}`, body)
+      let result = await axios.post(`${port}${careRequest}`, body)
       console.log(result, "Request creada con exito")
       if(result){
         props.dispatch({type: CREATE, payload: result.data})

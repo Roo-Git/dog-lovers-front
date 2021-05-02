@@ -41,8 +41,8 @@ function DogForm(props) {
     console.log(body, "======BODY")
 
     try {
-      let id = props.user.id
-      let result = await axios.post(`${port}${pet}/${id}`, body)
+      
+      let result = await axios.post(`${port}${pet}`, body)
       console.log(result, 'Perro creado con exito')
       if(result){
         props.dispatch({type: SHOW, payload: result.data})
