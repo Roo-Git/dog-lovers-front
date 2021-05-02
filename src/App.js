@@ -5,6 +5,7 @@ import Register from './containers/Register/Register';
 import Login from './containers/Login/Login';
 import Owner from './containers/Owner/Owner';
 import Choice from './containers/Choice/Choice';
+import Sitter from './containers/Sitter/Sitter';
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
         <Route path="/register" exact component={Register}/>
         <Route path="/login" exact component={Login}/>
         <Route path="/owner" exact component={Owner}/>
-        <Route path="/choice" exact component={Choice}/>        
+        <Route path="/choice" exact component={Choice}/>
+        <Route path="/sitter" exact component={Sitter}/>        
       </Switch>
       
       </BrowserRouter>
