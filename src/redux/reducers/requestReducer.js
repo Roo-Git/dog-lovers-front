@@ -1,4 +1,4 @@
-import { CREATE } from '../types/requestType';
+import { CREATE, REQUESTLOGOUT } from '../types/requestType';
 
 const initialState = {
     request: {},
@@ -11,7 +11,10 @@ const requestReducer = (state = initialState, action) => {
             return {
                 ...state,
                 request : action.payload
-            }            
+            }
+        case REQUESTLOGOUT :
+            return initialState  
+
         default :
             return state
     }

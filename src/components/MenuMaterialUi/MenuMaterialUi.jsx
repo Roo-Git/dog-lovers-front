@@ -1,5 +1,7 @@
 import React from 'react'
 import { LOGOUT } from '../../redux/types/userType';
+import { DOGLOGOUT } from '../../redux/types/dogType';
+import { REQUESTLOGOUT } from '../../redux/types/requestType';
 import { Button, Menu, MenuItem } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
@@ -23,6 +25,8 @@ function MenuMaterialUi(props) {
 
   const logOut = () => {
     props.dispatch({ type: LOGOUT, payload : {}});
+    props.dispatch({ type: DOGLOGOUT, payload : {}});
+    props.dispatch({ type: REQUESTLOGOUT, payload : {}});
     setTimeout(()=> {
         history.push('/');
     },3000);
@@ -58,6 +62,8 @@ function MenuMaterialUi(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      dog: state.dogReducer.dog,
+      request: state.requestReducer.request,
   }
 }
 
