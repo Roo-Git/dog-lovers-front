@@ -6,3 +6,4 @@ export const logout = '/logout';
 export const update = '/update';
 export const pet = '/dogs';
 export const careRequest = '/requests';
+export const candidates = '/candidates';

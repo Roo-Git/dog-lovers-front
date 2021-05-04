@@ -3,17 +3,74 @@ import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
 import {connect} from 'react-redux';
-import { careRequest, port } from '../../api/ApiSQL';
+import { candidates, careRequest, port } from '../../api/ApiSQL';
+import { useLocation } from 'react-router';
+import InputForm from '../../components/InputForm/InputForm';
+import { ADD } from '../../redux/types/candidateType';
 
 
 function Sitter (props) {
 
-  
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const confirmedBySitter = Boolean(params.get('confirmedBySitter'));
+  const acceptedByOwner = Boolean(params.get('acceptedByOwner'));
+
+  // HOOKS
+
+  // HOOK USESTATE 'CANDIDATE'
+  const [candidate, setCandidate] = useState({
+    post: '',
+    confirmedBySitter: confirmedBySitter,
+    acceptedByOwner: acceptedByOwner,
+    careRequest_Id: '',
+    sitter_Id: ''
+  })
+
+  // HOOK USESTATE 'REQUEST'
   const [requests, setRequests] = useState({
     index: []
   });
 
+  // HOOK USEEFFECT 'REQUEST'
+  useEffect(()=>{
+    getAllRequest();
+  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // HANDLERS
+
+  // HANDLER FOR CANDIDATE
+  const handleState = (e) => {
+    setCandidate({...candidate, [e.target.name]: e.target.value});
+  };
+
+
+  // FUNCTIONS
+
+  const toggle = async (ev) => {
+    ev.preventDefault()
+
+    let body = {
+      post: candidate.post,
+      confirmedBySitter: candidate.confirmedBySitter,
+      acceptedByOwner: candidate.acceptedByOwner,
+      careRequest_Id: props.careRequest_Id,
+      sitter_Id: props.sitter_Id
+    }
+    console.log(body, 'Soy el Body de Candidate')
+
+    try{
+      let result = await axios.post(port+candidates, body)
+      console.log(result, 'Candidato creado con exito')
+      if(result){
+        props.dispatch({type: ADD, payload: result.data})
+      }
+    } catch (error) {
+      console.log(error, 'La candidatura no ha podido ser realizada')
+    }
+  }
+
+  // GET ALL CARE REQUEST
   
   const getAllRequest = async () => {
     
@@ -27,9 +84,6 @@ function Sitter (props) {
     }
  };
 
-  useEffect(()=>{
-    getAllRequest();
-  },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
   
 
@@ -37,6 +91,14 @@ function Sitter (props) {
     <div className="sitterComponent">
       <Header/>
       <Navbar/>
+      <button onClick={toggle}></button>
+      <InputForm 
+                type="text"
+                title="Post"
+                name="post"
+                onChange={handleState}
+                value={candidate.post}
+      />
       {
 
       requests.index.map(request =>{
@@ -57,7 +119,8 @@ const mapStateToProps = state => {
   return {
     user : state.userReducer.user,
     dog  : state.dogReducer.dog,
-    request : state.requestReducer.request
+    request : state.requestReducer.request,
+    candidate : state.candidateReducer.candidate
   }
 }
 
