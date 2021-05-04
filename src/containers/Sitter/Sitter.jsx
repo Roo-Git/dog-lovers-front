@@ -1,21 +1,22 @@
-import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
-import {connect} from 'react-redux';
-import { candidates, careRequest, port } from '../../api/ApiSQL';
-import { useLocation } from 'react-router';
-import InputForm from '../../components/InputForm/InputForm';
-import { ADD } from '../../redux/types/candidateType';
 import PersonalButton from "../../components/PersonalButton/PersonalButton";
-import {GET} from '../../redux/types/requestType';
+import InputForm from '../../components/InputForm/InputForm';
+import {connect} from 'react-redux';
+import { ADD } from '../../redux/types/candidateType';
+import { GET } from '../../redux/types/requestType';
+import { useLocation } from 'react-router';
+import { candidates, careRequest, port } from '../../api/ApiSQL';
+import axios from 'axios';
+
 
 
 function Sitter (props) {
 
   const location = useLocation()
   const params = new URLSearchParams(location.search)
-  const confirmedBySitter = Boolean(params.get('confirmedBySitter'));
+  const confirmedBySitter = Boolean(params.get('confirmedBySitter=true'));
   const acceptedByOwner = Boolean(params.get('acceptedByOwner'));
 
   // HOOKS
@@ -27,7 +28,8 @@ function Sitter (props) {
     acceptedByOwner: acceptedByOwner,
     careRequest_Id: '',
     sitter_Id: ''
-  })
+  });
+ 
 
   // HOOK USESTATE 'REQUEST'
   const [requests, setRequests] = useState({
@@ -58,8 +60,8 @@ function Sitter (props) {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
-      careRequest_Id: props.careRequest_Id,
-      sitter_Id: props.sitter_Id
+      careRequest_Id: props.request.id,                            
+      sitter_Id: props.user.id                                  
     }
     console.log(bodyCandidate, 'Soy el Body de Candidate')
 
@@ -99,16 +101,9 @@ function Sitter (props) {
     <div className="sitterComponent">
       <Header/>
       <Navbar/>
-
-      {
-
-      requests.index.map(request =>{
-        return(        
-        <div key={request.id}>
-          <p>POST: {request.post}</p>
-          <form className="registerForm" onSubmit={toggle}>
+      <form className="registerFormm" onSubmit={toggle}>
       <InputForm 
-                type="text"
+                type="input"
                 title="Post"
                 name="post"
                 onChange={handleState}
@@ -116,6 +111,13 @@ function Sitter (props) {
       />
       <PersonalButton name="Submit"/>
       </form>
+
+      {
+
+      requests?.index.map(request =>{
+        return(        
+        <div key={request.id}>
+          <p>POST: {request.post}</p>
         </div>)
 
       })
