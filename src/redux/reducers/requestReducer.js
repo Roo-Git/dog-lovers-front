@@ -2,7 +2,7 @@ import { CREATE, GET, REQUESTLOGOUT } from '../types/requestType';
 
 const initialState = {
     createRequest: {},
-    getAllrequest : [],
+    getAllRequest : [],
 
 };
 
@@ -16,7 +16,7 @@ const requestReducer = (state = initialState, action) => {
         case GET :
             return {
                 ...state,
-                getAllrequest : action.payload
+                getAllRequest : action.payload
               }
         case REQUESTLOGOUT :
             return initialState  

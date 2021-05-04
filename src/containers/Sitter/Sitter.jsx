@@ -14,21 +14,8 @@ import axios from 'axios';
 
 function Sitter (props) {
 
-  const location = useLocation()
-  const params = new URLSearchParams(location.search)
-  const confirmedBySitter = Boolean(params.get('confirmedBySitter=true'));
-  const acceptedByOwner = Boolean(params.get('acceptedByOwner'));
 
   // HOOKS
-
-  // HOOK USESTATE 'CANDIDATE'
-  const [candidate, setCandidate] = useState({
-    post: '',
-    confirmedBySitter: confirmedBySitter,
-    acceptedByOwner: acceptedByOwner,
-    careRequest_Id: '',
-    sitter_Id: ''
-  });
  
 
   // HOOK USESTATE 'REQUEST'
@@ -41,6 +28,21 @@ function Sitter (props) {
     getAllRequest();
   },[]); // eslint-disable-line react-hooks/exhaustive-deps
 
+
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const confirmedBySitter = Boolean(params.get('confirmedBySitter=true'));
+  const acceptedByOwner = Boolean(params.get('acceptedByOwner'));
+
+    // HOOK USESTATE 'CANDIDATE'
+  const [candidate, setCandidate] = useState({
+    post: '',
+    confirmedBySitter: confirmedBySitter,
+    acceptedByOwner: acceptedByOwner,
+    careRequest_Id: '',
+    sitter_Id: ''
+  });
+
   // HANDLERS
 
   // HANDLER FOR CANDIDATE
@@ -52,7 +54,7 @@ function Sitter (props) {
   // FUNCTIONS
 
   // CREATE A CANDIDATE (NOT WORKING)
-
+  console.log(props, "PROOOOOOOOOOOOOOOPS")
   const toggle = async (ev) => {
     ev.preventDefault()
 
@@ -60,9 +62,10 @@ function Sitter (props) {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
-      careRequest_Id: props.request.id,                            
+      careRequest_Id: props.request,                            
       sitter_Id: props.user.id                                  
-    }
+    };
+
     console.log(bodyCandidate, 'Soy el Body de Candidate')
 
     try{
@@ -134,7 +137,7 @@ const mapStateToProps = state => {
   return {
     user : state.userReducer.user,
     dog  : state.dogReducer.dog,
-    request : state.requestReducer.request,
+    request : state.requestReducer.getAllRequest,
     candidate : state.candidateReducer.candidate
   }
 }
