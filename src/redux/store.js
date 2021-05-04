@@ -13,6 +13,7 @@ const store = createStoreWithMiddleware(
             user : {},
             dog : {},
             request : {},
+            candidate : {}
 
         },
         state: ['dataUser']
