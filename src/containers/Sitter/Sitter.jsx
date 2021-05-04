@@ -53,8 +53,8 @@ function Sitter (props) {
 
   // FUNCTIONS
 
-  // CREATE A CANDIDATE (NOT WORKING)
-  console.log(props, "PROOOOOOOOOOOOOOOPS")
+  // CREATE A CANDIDATE
+  
   const toggle = async (ev) => {
     ev.preventDefault()
 
@@ -62,7 +62,7 @@ function Sitter (props) {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
-      careRequest_Id: props.request,                            
+      careRequest_Id: props.request.id,                           
       sitter_Id: props.user.id                                  
     };
 
@@ -117,7 +117,7 @@ function Sitter (props) {
 
       {
 
-      requests?.index.map(request =>{
+      requests.index.map(request =>{
         return(        
         <div key={request.id}>
           <p>POST: {request.post}</p>
