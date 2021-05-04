@@ -29,13 +29,13 @@ function Sitter (props) {
 
   const location = useLocation()
   const params = new URLSearchParams(location.search)
-  const confirmedBySitter = Boolean(params.get('confirmedBySitter=true'));
+  //const confirmedBySitter = Boolean(params.get('confirmedBySitter=true'));
   const acceptedByOwner = Boolean(params.get('acceptedByOwner'));
 
     // HOOK USESTATE 'CANDIDATE'
   const [candidate, setCandidate] = useState({
     post: '',
-    confirmedBySitter: confirmedBySitter,
+    confirmedBySitter: true,
     acceptedByOwner: acceptedByOwner,
     careRequest_Id: '',
     sitter_Id: ''
@@ -53,18 +53,18 @@ function Sitter (props) {
 
   // CREATE A CANDIDATE
   
-  const createCandidate = async () => {
+  const createCandidate = async (id) => {
     
 
     let bodyCandidate = {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
-      careRequest_Id: props.request.id,                         
+      careRequest_Id: id,                         
       sitter_Id: props.user.id                                  
     };
 
-    console.log(bodyCandidate, 'Soy el Body de Candidate')
+    console.log(bodyCandidate, 'Soy el Body del candidato')
 
     try{
       let result = await axios.post(`${port}${candidates}`, bodyCandidate)
@@ -102,13 +102,13 @@ function Sitter (props) {
       <Navbar/>
 
       {
-
+      
       careRequests.careRequestList.map(request =>{
         return(        
         <div key={request.id}>
           <p>POST: {request.post}</p>
           <p>ID DE LA CARE REQUEST: {request.id}</p>
-          <button onChange={handleState} onClick={()=>createCandidate()} value={request.id}>Crear Candidato</button>
+          <button onChange={handleState} onClick={()=>createCandidate(request.id)} value={request.id}>Crear Candidato</button>
         </div>)
 
       })
