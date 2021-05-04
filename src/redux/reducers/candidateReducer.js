@@ -10,7 +10,7 @@ const candidateReducer = (state = initialState, action) => {
         case ADD :
             return {
                 ...state,
-                request : action.payload
+                candidate : action.payload
             }
         case CANDIDATELOGOUT :
             return initialState  

@@ -7,6 +7,8 @@ import { candidates, careRequest, port } from '../../api/ApiSQL';
 import { useLocation } from 'react-router';
 import InputForm from '../../components/InputForm/InputForm';
 import { ADD } from '../../redux/types/candidateType';
+import PersonalButton from "../../components/PersonalButton/PersonalButton";
+import {CREATE} from '../../redux/types/requestType';
 
 
 function Sitter (props) {
@@ -77,6 +79,9 @@ function Sitter (props) {
 
     try{
       let result = await axios.get(`${port}${careRequest}`)
+      if(result){
+        props.dispatch({type: CREATE, payload: result.data})
+      }
       console.log(result.data, "Requests obtenidas con exito")
       setRequests({...requests, index: result.data})
     } catch(error) {
@@ -91,7 +96,14 @@ function Sitter (props) {
     <div className="sitterComponent">
       <Header/>
       <Navbar/>
-      <button onClick={toggle}></button>
+
+      {
+
+      requests.index.map(request =>{
+        return(        
+        <div key={request.id}>
+          <p>POST: {request.post}</p>
+          <form className="registerForm" onSubmit={toggle}>
       <InputForm 
                 type="text"
                 title="Post"
@@ -99,15 +111,13 @@ function Sitter (props) {
                 onChange={handleState}
                 value={candidate.post}
       />
-      {
-
-      requests.index.map(request =>{
-        return(        
-        <div key={request.id}>
-          <p>POST: {request.post}</p>
+      <PersonalButton name="Submit"/>
+      </form>
         </div>)
 
       })
+
+      
       
       }
       
