@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import axios from 'axios';
 import { careRequest, port } from '../../api/ApiSQL';
 import {connect} from 'react-redux';
-import {CREATE} from '../../redux/types/requestType';
+import {ADD_LIST} from '../../redux/types/requestType';
 import InputForm from '../../components/InputForm/InputForm';
 import PersonalButton from '../../components/PersonalButton/PersonalButton';
 
@@ -36,7 +36,7 @@ function RequestForm(props) {
       let result = await axios.post(`${port}${careRequest}`, body)
       console.log(result, "Request creada con exito")
       if(result){
-        props.dispatch({type: CREATE, payload: result.data})
+        props.dispatch({type: ADD_LIST, payload: result.data})
       }
     } catch(error) {
       console.log(error, 'La request no ha podido ser creada')
@@ -93,7 +93,7 @@ const mapStateToProps = state => {
   return {
     user : state.userReducer.user,
     dog  : state.dogReducer.dog,
-    request : state.requestReducer.request
+    request : state.requestReducer.list
   }
 }
 

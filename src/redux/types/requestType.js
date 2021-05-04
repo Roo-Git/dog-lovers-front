@@ -1,3 +1,2 @@
-export const CREATE = 'create';
-export const GET = 'get';
+export const ADD_LIST = 'addList';
 export const REQUESTLOGOUT = 'requestLogout';

@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
-import PersonalButton from "../../components/PersonalButton/PersonalButton";
-import InputForm from '../../components/InputForm/InputForm';
 import {connect} from 'react-redux';
 import { ADD } from '../../redux/types/candidateType';
-import { GET } from '../../redux/types/requestType';
+import { ADD_LIST } from '../../redux/types/requestType';
 import { useLocation } from 'react-router';
 import { candidates, careRequest, port } from '../../api/ApiSQL';
 import axios from 'axios';
@@ -19,8 +17,8 @@ function Sitter (props) {
  
 
   // HOOK USESTATE 'REQUEST'
-  const [requests, setRequests] = useState({
-    index: []
+  const [careRequests, setCareRequests] = useState({
+    careRequestList: [],
   });
 
   // HOOK USEEFFECT 'REQUEST'
@@ -55,14 +53,14 @@ function Sitter (props) {
 
   // CREATE A CANDIDATE
   
-  const toggle = async (ev) => {
-    ev.preventDefault()
+  const createCandidate = async () => {
+    
 
     let bodyCandidate = {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
-      careRequest_Id: props.request.id,                           
+      careRequest_Id: props.request.id,                         
       sitter_Id: props.user.id                                  
     };
 
@@ -86,10 +84,10 @@ function Sitter (props) {
 
     try{
       let result = await axios.get(`${port}${careRequest}`)
-      console.log(result.data, "Requests obtenidas con exito")
-      setRequests({...requests, index: result.data})
+      //console.log(result.data, "Requests obtenidas con exito")
+      setCareRequests({...careRequests, careRequestList: result.data})
       if(result){
-        props.dispatch({type: GET, payload: result.data})
+        props.dispatch({type: ADD_LIST, payload: result.data})
       }
 
     } catch(error) {
@@ -98,35 +96,23 @@ function Sitter (props) {
  };
 
 
-  
-
   return (
     <div className="sitterComponent">
       <Header/>
       <Navbar/>
-      <form className="registerFormm" onSubmit={toggle}>
-      <InputForm 
-                type="input"
-                title="Post"
-                name="post"
-                onChange={handleState}
-                value={candidate.post}
-      />
-      <PersonalButton name="Submit"/>
-      </form>
 
       {
 
-      requests.index.map(request =>{
+      careRequests.careRequestList.map(request =>{
         return(        
         <div key={request.id}>
           <p>POST: {request.post}</p>
+          <p>ID DE LA CARE REQUEST: {request.id}</p>
+          <button onChange={handleState} onClick={()=>createCandidate()} value={request.id}>Crear Candidato</button>
         </div>)
 
       })
-
-      
-      
+  
       }
       
     </div>
@@ -137,7 +123,7 @@ const mapStateToProps = state => {
   return {
     user : state.userReducer.user,
     dog  : state.dogReducer.dog,
-    request : state.requestReducer.getAllRequest,
+    request : state.requestReducer.list,
     candidate : state.candidateReducer.candidate
   }
 }

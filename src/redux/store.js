@@ -12,7 +12,7 @@ const store = createStoreWithMiddleware(
         preloadState : {
             user : {},
             dog : {},
-            request : {},
+            list : [],
             candidate : {}
 
         },

@@ -1,23 +1,17 @@
-import { CREATE, GET, REQUESTLOGOUT } from '../types/requestType';
+import { ADD_LIST, REQUESTLOGOUT } from '../types/requestType';
 
 const initialState = {
-    createRequest: {},
-    getAllRequest : [],
+    list: [],
 
 };
 
 const requestReducer = (state = initialState, action) => {
     switch(action.type){
-        case CREATE :
+        case ADD_LIST :
             return {
                 ...state,
-                createRequest : action.payload
+                list : action.payload
             }
-        case GET :
-            return {
-                ...state,
-                getAllRequest : action.payload
-              }
         case REQUESTLOGOUT :
             return initialState  
 
