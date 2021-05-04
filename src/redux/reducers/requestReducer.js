@@ -1,7 +1,8 @@
-import { CREATE, REQUESTLOGOUT } from '../types/requestType';
+import { CREATE, GET, REQUESTLOGOUT } from '../types/requestType';
 
 const initialState = {
-    request: {},
+    createRequest: {},
+    getAllrequest : [],
 
 };
 
@@ -10,8 +11,13 @@ const requestReducer = (state = initialState, action) => {
         case CREATE :
             return {
                 ...state,
-                request : action.payload
+                createRequest : action.payload
             }
+        case GET :
+            return {
+                ...state,
+                getAllrequest : action.payload
+              }
         case REQUESTLOGOUT :
             return initialState  
 

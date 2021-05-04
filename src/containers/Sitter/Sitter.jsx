@@ -8,7 +8,7 @@ import { useLocation } from 'react-router';
 import InputForm from '../../components/InputForm/InputForm';
 import { ADD } from '../../redux/types/candidateType';
 import PersonalButton from "../../components/PersonalButton/PersonalButton";
-import {CREATE} from '../../redux/types/requestType';
+import {GET} from '../../redux/types/requestType';
 
 
 function Sitter (props) {
@@ -49,20 +49,22 @@ function Sitter (props) {
 
   // FUNCTIONS
 
+  // CREATE A CANDIDATE (NOT WORKING)
+
   const toggle = async (ev) => {
     ev.preventDefault()
 
-    let body = {
+    let bodyCandidate = {
       post: candidate.post,
       confirmedBySitter: candidate.confirmedBySitter,
       acceptedByOwner: candidate.acceptedByOwner,
       careRequest_Id: props.careRequest_Id,
       sitter_Id: props.sitter_Id
     }
-    console.log(body, 'Soy el Body de Candidate')
+    console.log(bodyCandidate, 'Soy el Body de Candidate')
 
     try{
-      let result = await axios.post(port+candidates, body)
+      let result = await axios.post(`${port}${candidates}`, bodyCandidate)
       console.log(result, 'Candidato creado con exito')
       if(result){
         props.dispatch({type: ADD, payload: result.data})
@@ -79,11 +81,12 @@ function Sitter (props) {
 
     try{
       let result = await axios.get(`${port}${careRequest}`)
-      if(result){
-        props.dispatch({type: CREATE, payload: result.data})
-      }
       console.log(result.data, "Requests obtenidas con exito")
       setRequests({...requests, index: result.data})
+      if(result){
+        props.dispatch({type: GET, payload: result.data})
+      }
+
     } catch(error) {
       console.log(error, 'Las request no han podido ser obtenidas')
     }
