@@ -45,14 +45,15 @@ function RequestForm(props) {
 
   
 
-  
-
-
   return (
     <div className="requestComponent">
-      <form className="registerForm" onSubmit={toggle}>
-            <h2>Request</h2>
-            <div className="input">
+      {
+        props.dog.id
+        ?
+        <>
+        <h2 className="care-request-h2">Please, create a care request!</h2>
+        <form className="care-request-form" onSubmit={toggle}>
+            <div className="start-date-input">
               <InputForm
                 type="input"
                 title="StartDate"
@@ -61,7 +62,7 @@ function RequestForm(props) {
                 value={request.startDate}
               />
             </div>
-            <div className="input">
+            <div className="finish-date-input">
               <InputForm 
                 type="input"
                 title="FinishDate"
@@ -70,7 +71,7 @@ function RequestForm(props) {
                 value={request.finishDate}
               />
             </div>
-            <div className="input">
+            <div className="post-input-care-request">
               <InputForm 
                 type="input"
                 title="Post"
@@ -80,11 +81,17 @@ function RequestForm(props) {
               />
             </div>
            
-            <div className="submit">
+            <div className="care-request-submit">
               <PersonalButton name="Submit"/> 
-            </div>
-            <div className="closeForm"></div>
+            </div>  
         </form>
+        </>
+        :
+        <>
+        <h2>Not care request yet</h2>
+        </>
+      }
+      
     </div>
   )
 }
