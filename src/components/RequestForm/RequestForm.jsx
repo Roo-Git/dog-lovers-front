@@ -48,9 +48,76 @@ function RequestForm(props) {
   return (
     <div className="requestComponent">
       {
-        props.dog.id
+        props.request.id
         ?
         <>
+        <h2 className="not-care-request-h2">Created Care Request.</h2>
+        </>
+        :
+        <>
+          {
+            props.user.id && props.dog.id
+            ?
+            <>
+              <h2 className="care-request-h2">Please, create a care request!</h2>
+              <form className="care-request-form" onSubmit={toggle}>
+                  <div className="start-date-input">
+                    <InputForm
+                      type="input"
+                      title="StartDate"
+                      name="startDate"
+                      onChange={handleState}
+                      value={request.startDate}
+                    />
+                  </div>
+                  <div className="finish-date-input">
+                    <InputForm 
+                      type="input"
+                      title="FinishDate"
+                      name="finishDate"
+                      onChange={handleState}
+                      value={request.finishDate}
+                    />
+                  </div>
+                  <div className="post-input-care-request">
+                    <InputForm 
+                      type="input"
+                      title="Post"
+                      name="post"
+                      onChange={handleState}
+                      value={request.post}
+                    />
+                  </div>
+                
+                  <div className="care-request-submit">
+                    <PersonalButton name="Submit"/> 
+                  </div>  
+              </form>
+            </>
+            :
+            <>
+            <h2 className="not-care-request-h2">Not care request yet.</h2>
+            </>
+          }
+        </>
+      }
+      
+    </div>
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    user : state.userReducer.user,
+    dog  : state.dogReducer.dog,
+    request : state.requestReducer.list
+  }
+}
+
+export default connect(mapStateToProps)(RequestForm);
+
+
+/*
         <h2 className="care-request-h2">Please, create a care request!</h2>
         <form className="care-request-form" onSubmit={toggle}>
             <div className="start-date-input">
@@ -85,23 +152,5 @@ function RequestForm(props) {
               <PersonalButton name="Submit"/> 
             </div>  
         </form>
-        </>
-        :
-        <>
-        <h2 className="not-care-request-h2">Not care request yet.</h2>
-        </>
-      }
-      
-    </div>
-  )
-}
 
-const mapStateToProps = state => {
-  return {
-    user : state.userReducer.user,
-    dog  : state.dogReducer.dog,
-    request : state.requestReducer.list
-  }
-}
-
-export default connect(mapStateToProps)(RequestForm);
+*/

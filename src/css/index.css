@@ -737,7 +737,7 @@ input:not(:focus):valid ~ .floatingLabel {
 .dog-name-card, .dog-gender-card,
 .dog-breed-card, .dog-size-card,
 .dog-age-card, .dog-description-card {
-  margin: 20px; }
+  margin: 15px; }
 
 .dog-not-subscribed {
   display: flex;

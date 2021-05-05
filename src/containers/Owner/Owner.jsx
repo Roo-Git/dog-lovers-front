@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import DogForm from '../../components/DogForm/DogForm';
 import Header from "../../components/Header/Header";
 import Navbar from "../../components/Navbar/Navbar";
-import Card from '../../components/Card/Card';
+import DogCard from '../../components/DogCard/DogCard';
 import RequestForm from '../../components/RequestForm/RequestForm';
 import Footer from '../../components/Footer/Footer';
 import OwnerTabs from '../../components/OwnerTabs/OwnerTabs';

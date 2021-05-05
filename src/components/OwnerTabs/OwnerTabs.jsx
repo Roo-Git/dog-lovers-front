@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Card from '../Card/Card';
+import DogCard from '../DogCard/DogCard';
 import DogForm from '../DogForm/DogForm';
 import RequestForm from '../RequestForm/RequestForm';
 
@@ -62,7 +62,7 @@ function OwnerTabs(props) {
       <div
         className={toggleState === 2 ? "content  active-content" : "content"}
       >
-        <Card/>
+        <DogCard/>
       </div>
 
       <div
