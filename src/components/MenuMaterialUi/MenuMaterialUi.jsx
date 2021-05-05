@@ -26,7 +26,7 @@ function MenuMaterialUi(props) {
   const logOut = () => {
     props.dispatch({ type: LOGOUT, payload : {}});
     props.dispatch({ type: DOGLOGOUT, payload : {}});
-    //props.dispatch({ type: REQUESTLOGOUT, payload : {}});
+    props.dispatch({ type: REQUESTLOGOUT, payload : {}});
     setTimeout(()=> {
         history.push('/');
     });

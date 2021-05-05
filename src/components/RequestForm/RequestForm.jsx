@@ -88,7 +88,7 @@ function RequestForm(props) {
         </>
         :
         <>
-        <h2>Not care request yet</h2>
+        <h2 className="not-care-request-h2">Not care request yet.</h2>
         </>
       }
       
