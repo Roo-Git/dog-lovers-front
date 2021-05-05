@@ -56,9 +56,13 @@ function DogForm(props) {
 
   return (
     <div className="dogFormComponent">
-      <form className="registerForm" onSubmit={toggle}>
-            <h2>Dog Registration</h2>
-            <div className="input">
+      {
+        !props.dog.id 
+        ?
+        <>
+        <h2 className="dog-h2">Please, subscribe your Dog</h2>
+        <form className="dog-form" onSubmit={toggle}>
+            <div className="dog-input">
               <InputForm 
                 type="input"
                 title="Name"
@@ -67,7 +71,7 @@ function DogForm(props) {
                 value={dog.name}
               />
             </div>
-            <div className="input">
+            <div className="dog-gender">
               <InputForm 
                 type="input"
                 title="Gender"
@@ -76,7 +80,7 @@ function DogForm(props) {
                 value={dog.gender}
               />
             </div>
-            <div className="input">
+            <div className="dog-breed">
               <InputForm 
                 type="input"
                 title="Breed"
@@ -85,16 +89,16 @@ function DogForm(props) {
                 value={dog.breed}
               />
             </div>
-            <div className="input">
+            <div className="dog-size">
               <InputForm 
-                type="tinput"
+                type="input"
                 title="Size"
                 name="size"
                 onChange={handleState}
                 value={dog.size}
               />
             </div>
-            <div className="input">
+            <div className="dog-age">
               <InputForm 
                 type="input"
                 title="Age"
@@ -103,7 +107,7 @@ function DogForm(props) {
                 value={dog.age}
               />
             </div>
-            <div className="input">
+            <div className="dog-description">
               <InputForm 
                 type="input"
                 title="Description"
@@ -112,11 +116,17 @@ function DogForm(props) {
                 value={dog.description}
               />
             </div>
-            <div className="submit">
+            <div className="dog-submit">
               <PersonalButton name="Submit"/> 
             </div>
-            <div className="closeForm"></div>
         </form>
+        </>
+        :
+        <>
+       <h2 className="dog-subscribed">Dog Subscribed!</h2>
+        </>
+      }
+      
     </div>
   )
 }
