@@ -1,14 +1,14 @@
-.dog-title {
+.cr-title {
   padding: 40px 0px 0px 40px;
 }
 
-.dogCardComponent {
+.careRequestCardComponent {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.dog-card-container {
+.cr-card-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -16,14 +16,12 @@
 
 }
 
-.dog-card-info {
+.cr-card-info {
   display: flex;
   flex-direction: column;
 }
 
-.dog-name-card, .dog-gender-card, 
-.dog-breed-card, .dog-size-card, 
-.dog-age-card, .dog-description-card{
+.cr-start-date-card, .cr-finish-date-card, .cr-post-card {
   margin: 15px;
 }
 

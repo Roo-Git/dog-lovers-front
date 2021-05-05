@@ -8,7 +8,7 @@ function DogCard(props) {
 
 
   return (
-    <div className="cardComponent">
+    <div className="dogCardComponent">
       {
         props.dog.id
         ?
