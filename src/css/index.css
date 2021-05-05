@@ -549,18 +549,6 @@ template {
   border-radius: 0.3em;
   font-size: 15px; }
 
-.ownerContainer {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3d394;
-  color: white; }
-
-.target {
-  background-color: red; }
-
 /*Components*/
 .buttonComponent {
   display: flex;
@@ -723,3 +711,82 @@ input:not(:focus):valid ~ .floatingLabel {
   justify-content: center;
   align-items: center;
   margin-top: 40px; }
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #f3d394; }
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 70%;
+  height: 600px;
+  background: #f3d394;
+  margin: 150px auto 0;
+  word-break: break-all;
+  border: 1px solid  #3E3631; }
+
+.bloc-tabs {
+  display: flex; }
+
+.tabs {
+  padding: 15px;
+  text-align: center;
+  width: 50%;
+  background: rgba(128, 128, 128, 0.075);
+  cursor: pointer;
+  border-bottom: 1px solid  #3E3631;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  color: white;
+  font-size: 30px; }
+
+.tabs:not(:last-child) {
+  border-right: 1px solid  #3E3631; }
+
+.active-tabs {
+  background: #FFBF42;
+  border-bottom: 1px solid transparent; }
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+  background: #3E3631; }
+
+button {
+  border: none; }
+
+.content-tabs {
+  flex-grow: 1; }
+
+.content {
+  background: #FFBF42;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  display: none;
+  color: white; }
+
+.content h2 {
+  padding: 0px 0px 20px 0px; }
+
+.content p {
+  width: 100%;
+  font-size: 20px; }
+
+.active-content {
+  display: block; }

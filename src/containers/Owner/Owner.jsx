@@ -6,6 +6,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Card from '../../components/Card/Card';
 import RequestForm from '../../components/RequestForm/RequestForm';
 import Footer from '../../components/Footer/Footer';
+import OwnerTabs from '../../components/OwnerTabs/OwnerTabs';
 
 
 
@@ -15,13 +16,34 @@ function Owner(props) {
   
   return (
     <div className="ownerContainer">
-      {
+      <Header/>
+      <Navbar/>
+      <OwnerTabs/>
+      <div className="spaceBar"></div>
+    </div>
+  )
+}
+
+const mapStateToProps = state => {
+  return {
+    user : state.userReducer.user,
+    dog  : state.dogReducer.dog,
+    request : state.requestReducer.request
+  }
+}
+
+export default connect(mapStateToProps)(Owner);
+
+
+/*
+ {
         !props.dog.user_Id
         ?
         <>
         <Header/>
         <Navbar/>
         <DogForm/>
+        <OwnerTabs/>
         
         
         
@@ -36,16 +58,5 @@ function Owner(props) {
         
         </>
       }
-    </div>
-  )
-}
 
-const mapStateToProps = state => {
-  return {
-    user : state.userReducer.user,
-    dog  : state.dogReducer.dog,
-    request : state.requestReducer.request
-  }
-}
-
-export default connect(mapStateToProps)(Owner);
+*/
