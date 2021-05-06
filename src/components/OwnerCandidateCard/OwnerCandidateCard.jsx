@@ -16,6 +16,8 @@ function OwnerCandidateCard(props) {
             <p className="candidate-post">Candidate Message: {props.candidate.post}</p>
             <button className="accept-candidate">Accept</button>
             <p className="candidate-id">{props.candidate.id}</p>
+            <p className="confirmed-by-sitter">Confirmed by Sitter: {props.candidate.confirmedBySitter}</p>
+            <p className="accepted-by-owner">Accepted by Owner: {props.candidate.acceptedByOwner}</p>
           </div>
         </div>
         </>

@@ -2,7 +2,6 @@ import React from 'react'
 import footPrint from '../../img/footPrint.png';
 import {connect} from 'react-redux';
 
-//import RequestForm from '../RequestForm/RequestForm';
 
 function DogCard(props) {
 

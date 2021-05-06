@@ -7,8 +7,11 @@ import { useHistory } from "react-router";
 import {port, adopter, login} from "../../api/ApiSQL";
 import axios from "axios";
 import validate from "../../tools/validate";
-import {LOGIN} from '../../redux/types/userType'
 import {connect} from 'react-redux';
+import { LOGIN } from '../../redux/types/userType';
+import { SHOW } from '../../redux/types/dogType';
+import { ADD_LIST } from "../../redux/types/requestType";
+import { ADD } from "../../redux/types/candidateType";
 
 
 function Login(props) {
@@ -52,6 +55,9 @@ function Login(props) {
       console.log(result, "Usuario logeado con exito")
       if(result){
         props.dispatch({type: LOGIN, payload: result.data});
+        //props.dispatch({type: SHOW, payload: result.data.Dogs});
+        //props.dispatch({type: ADD_LIST, payload: result.data.CareRequests});
+        //props.dispatch({type: ADD, payload: result.data.Candidates});
         if(result.data){
           history.push('/');
         }else{
@@ -115,6 +121,9 @@ function Login(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      dog : state.dogReducer.dog,
+      request: state.requestReducer.request,
+      candidate: state.candidateReducer.candidate
   }
 }
 
