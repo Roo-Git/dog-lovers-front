@@ -5,7 +5,7 @@ function OwnerCandidateCard(props) {
   return (
     <div className="ownerCandidateCard">
       {
-        props.candidate.id
+        props.candidate.length > 0
         ?
         <>
         <h2 className="candidate-title">Your Candidate!</h2>
@@ -13,11 +13,11 @@ function OwnerCandidateCard(props) {
         <div className="candidate-card-container">
           
           <div className="candidate-card-info">
-            <p className="candidate-post">Candidate Message: {props.candidate.post}</p>
+            <p className="candidate-post">Candidate Message: {props.candidate[0].post}</p>
             <button className="accept-candidate">Accept</button>
-            <p className="candidate-id">{props.candidate.id}</p>
-            <p className="confirmed-by-sitter">Confirmed by Sitter: {props.candidate.confirmedBySitter}</p>
-            <p className="accepted-by-owner">Accepted by Owner: {props.candidate.acceptedByOwner}</p>
+            <p className="candidate-id">{props.candidate[0].id}</p>
+            <p className="confirmed-by-sitter">Confirmed by Sitter: {props.candidate[0].confirmedBySitter}</p>
+            <p className="accepted-by-owner">Accepted by Owner: {props.candidate[0].acceptedByOwner}</p>
           </div>
         </div>
         </>

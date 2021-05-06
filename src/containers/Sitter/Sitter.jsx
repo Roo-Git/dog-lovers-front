@@ -70,7 +70,7 @@ function Sitter (props) {
       let result = await axios.post(`${port}${candidates}`, bodyCandidate)
       console.log(result, 'Candidato creado con exito')
       if(result){
-        props.dispatch({type: ADD, payload: result.data})
+        props.dispatch({type: ADD, payload: [result.data]})
       }
     } catch (error) {
       console.log(error, 'La candidatura no ha podido ser realizada')
@@ -87,7 +87,7 @@ function Sitter (props) {
       //console.log(result.data, "Requests obtenidas con exito")
       setCareRequests({...careRequests, careRequestList: result.data})
       if(result){
-        props.dispatch({type: ADD_LIST, payload: result.data})
+        props.dispatch({type: ADD_LIST, payload: [result.data]})
       }
 
     } catch(error) {

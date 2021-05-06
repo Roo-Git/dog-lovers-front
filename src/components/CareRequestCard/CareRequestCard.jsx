@@ -5,7 +5,7 @@ function CareRequestCard(props) {
   return (
     <div className="careRequestCardComponent">
        {
-        props.request.id
+        props.request.length > 0
         ?
         <>
         <h2 className="cr-title">Your Care Request!</h2>
@@ -14,9 +14,9 @@ function CareRequestCard(props) {
 
             <div className="cr-card-info">
               
-              <p className="cr-start-date-card">Start Date: {props.request.startDate}</p>
-              <p className="cr-finish-date-card">Finish Date: {props.request.finishDate}</p>
-              <p className="cr-post-card">Your message: {props.request.post}</p>
+              <p className="cr-start-date-card">Start Date: {props.request[0].startDate}</p>
+              <p className="cr-finish-date-card">Finish Date: {props.request[0].finishDate}</p>
+              <p className="cr-post-card">Your message: {props.request[0].post}</p>
 
             </div>
         </div>

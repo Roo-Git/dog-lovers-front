@@ -25,7 +25,7 @@ function RequestForm(props) {
 
     let body = {
       owner_Id: props.user.id,
-      dog_Id: props.dog.id,
+      dog_Id: props.dog[0].id,
       startDate: request.startDate,
       finishDate: request.finishDate,
       post: request.post
@@ -36,7 +36,7 @@ function RequestForm(props) {
       let result = await axios.post(`${port}${careRequest}`, body)
       console.log(result, "Request creada con exito")
       if(result){
-        props.dispatch({type: ADD_LIST, payload: result.data})
+        props.dispatch({type: ADD_LIST, payload: [result.data]})
       }
     } catch(error) {
       console.log(error, 'La request no ha podido ser creada')
@@ -48,7 +48,7 @@ function RequestForm(props) {
   return (
     <div className="requestComponent">
       {
-        props.request.id
+        props.request.length > 0
         ?
         <>
         <h2 className="not-care-request-h2">Created Care Request.</h2>
@@ -56,7 +56,7 @@ function RequestForm(props) {
         :
         <>
           {
-            props.user.id && props.dog.id
+            props.user.id && props.dog.length > 0
             ?
             <>
               <h2 className="care-request-h2">Please, create a care request!</h2>

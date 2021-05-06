@@ -1,7 +1,7 @@
 import { ADD, CANDIDATELOGOUT } from '../types/candidateType';
 
 const initialState = {
-    candidate: {},
+    candidate: [],
 
 };
 

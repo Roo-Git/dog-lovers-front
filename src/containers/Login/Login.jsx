@@ -55,9 +55,10 @@ function Login(props) {
       console.log(result, "Usuario logeado con exito")
       if(result){
         props.dispatch({type: LOGIN, payload: result.data});
-        //props.dispatch({type: SHOW, payload: result.data.Dogs});
-        //props.dispatch({type: ADD_LIST, payload: result.data.CareRequests});
-        //props.dispatch({type: ADD, payload: result.data.Candidates});
+        props.dispatch({type: SHOW, payload: result.data.user.Dogs});
+        props.dispatch({type: ADD_LIST, payload: result.data.user.CareRequests});
+        props.dispatch({type: ADD, payload: result.data.user.Candidates});
+        console.log(result.data, "RESULT DATA AQUI")
         if(result.data){
           history.push('/');
         }else{

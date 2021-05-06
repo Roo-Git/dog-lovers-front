@@ -1,7 +1,7 @@
 import { SHOW, DOGLOGOUT} from '../types/dogType';
 
 const initialState = {
-    dog: {},
+    dog: [],
 
 };
 

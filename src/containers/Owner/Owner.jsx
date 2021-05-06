@@ -34,7 +34,7 @@ export default connect(mapStateToProps)(Owner);
 
 /*
  {
-        !props.dog.user_Id
+        !props.dog[0].user_Id
         ?
         <>
         <Header/>

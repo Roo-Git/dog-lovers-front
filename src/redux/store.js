@@ -11,9 +11,9 @@ const store = createStoreWithMiddleware(
     load({
         preloadState : {
             user : {},
-            dog : {},
+            dog : [],
             list : [],
-            candidate : {}
+            candidate : []
 
         },
         state: ['dataUser']

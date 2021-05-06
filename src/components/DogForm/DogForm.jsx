@@ -45,7 +45,7 @@ function DogForm(props) {
       let result = await axios.post(`${port}${pet}`, body)
       console.log(result, 'Perro creado con exito')
       if(result){
-        props.dispatch({type: SHOW, payload: result.data})
+        props.dispatch({type: SHOW, payload: [result.data]})
       }
 
     }catch (error){
@@ -53,11 +53,11 @@ function DogForm(props) {
 
     }
   };
-
+  console.log(props.dog, "PROP DOG")
   return (
     <div className="dogFormComponent">
-      {
-        !props.dog.id 
+       {
+        !props.dog.length > 0
         ?
         <>
         <h2 className="dog-h2">Please, subscribe your Dog</h2>
@@ -125,7 +125,7 @@ function DogForm(props) {
         <>
        <h2 className="dog-subscribed">Dog Subscribed!</h2>
         </>
-      }
+      } 
       
     </div>
   )
