@@ -44,7 +44,15 @@ export default function validate(fields, context = 'register') {
                 if(fields[key] === '')
                 errors[key] = {status: 'error', help: 'Please provide your address.'};
             break;
-            case 'phoneNumber' :
+            case 'country' :
+              if(! /^[a-zA-Z\u00C0-\u00FF]+(([',. -][a-zA-Z\u00C0-\u00FF ])?[a-zA-Z\u00C0-\u00FF]*)*$/.test(fields[key]))
+                  errors[key] = {status: 'error', help: 'Only letters are allowed in the Country field.'};
+            break;
+            case 'city' :
+              if(! /^[a-zA-Z\u00C0-\u00FF]+(([',. -][a-zA-Z\u00C0-\u00FF ])?[a-zA-Z\u00C0-\u00FF]*)*$/.test(fields[key]))
+                  errors[key] = {status: 'error', help: 'Only letters are allowed in the City field.'};
+            break;
+            case 'phone' :
                 if(! /^(\+34|0034|34)?[ -]*(6|7)[ -]*([0-9][ -]*){8}/.test(fields[key])
                     && ! /^(\+34|0034|34)?[ -]*(8|9)[ -]*([0-9][ -]*){8}/.test(fields[key]))
                     errors[key] = {status: 'error', help: 'Please provide a valid landline or mobile phone.'};
@@ -53,6 +61,10 @@ export default function validate(fields, context = 'register') {
                 if(! /^(0[1-9]|1[012])[- /.](0[1-9]|[12][0-9]|3[01])[- /.](19|20)\d\d$/.test(fields[key])
                     /*&& ! /^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\d\d$/.test(fields[key])*/)
                     errors[key] = {status: 'error', help: 'Please enter a date like dd-mm-yyyy.'};
+            break;
+            case 'description' :
+              if(! /^[a-zA-Z\u00C0-\u00FF]+(([',. -][a-zA-Z\u00C0-\u00FF ])?[a-zA-Z\u00C0-\u00FF]*)*$/.test(fields[key]))
+                  errors[key] = {status: 'error', help: 'Only letters are allowed in your description.'};
             break;
             case 'nif' :
                 if(!validateSpanishID(fields[key])?.valid)
