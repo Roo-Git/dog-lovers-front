@@ -27,7 +27,7 @@ function Register(props) {
     sitter: sitter
   });
 
-  console.log(user.sitter)
+  
 
   const [errors, setErrors] = useState({});
 
@@ -135,15 +135,3 @@ function Register(props) {
 
 export default Register;
 
-
-/*
-            <InputForm 
-              type="text"
-              title="FirstName"
-              name="firstName"
-              onChange={handleState}
-              error={errors.firstName?.help}
-              value={user.firstName}
-            />
-            </div>
-*/

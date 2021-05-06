@@ -53,7 +53,6 @@ function DogForm(props) {
 
     }
   };
-  console.log(props.dog, "PROP DOG")
   return (
     <div className="dogFormComponent">
        {

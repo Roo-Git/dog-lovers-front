@@ -6,6 +6,8 @@ import { Button, Menu, MenuItem } from '@material-ui/core'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
 import {connect} from 'react-redux';
+//import { CANDIDATELOGOUT } from '../../redux/types/candidateType';
+//props.dispatch({ type: CANDIDATELOGOUT, payload : {}});
 
 
 function MenuMaterialUi(props) {
@@ -27,6 +29,7 @@ function MenuMaterialUi(props) {
     props.dispatch({ type: LOGOUT, payload : {}});
     props.dispatch({ type: DOGLOGOUT, payload : {}});
     props.dispatch({ type: REQUESTLOGOUT, payload : {}});
+    
     setTimeout(()=> {
         history.push('/');
     });
