@@ -16,6 +16,8 @@ function Owner(props) {
       <Header/>
       <Navbar/>
       <OwnerTabs/>
+      <div className="spaceBar"></div>
+      <div className="spaceBar"></div>
       <Footer/>
     </div>
   )

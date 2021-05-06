@@ -809,7 +809,7 @@ body {
   position: relative;
   outline: none;
   color: white;
-  font-size: 22px; }
+  font-size: 20px; }
 
 .tabs:not(:last-child) {
   border-right: 1px solid  #3E3631; }
@@ -1006,3 +1006,30 @@ button {
   align-self: center;
   padding: 40px 0px 0px 0px;
   font-size: 100px; }
+
+.update-user-form {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 60px;
+  margin-left: 35px; }
+
+.profile-h2 {
+  padding: 40px 0px 0px 40px; }
+
+.ownwer-up {
+  display: grid;
+  grid-column: 2;
+  grid-row: 3;
+  width: 92%;
+  height: 60px;
+  margin-top: 20px; }
+
+.sitter-up {
+  display: grid;
+  grid-column: 4;
+  grid-row: 3;
+  width: 92%;
+  height: 60px;
+  margin-top: 20px; }
