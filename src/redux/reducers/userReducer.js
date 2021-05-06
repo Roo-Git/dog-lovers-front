@@ -21,7 +21,7 @@ const userReducer = (state = initialState, action) => {
         case UPDATE :
             return {
                 ...state,
-                user : action.payload
+                user : action.payload,
 
             }
         default :

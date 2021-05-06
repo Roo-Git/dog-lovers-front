@@ -5,8 +5,13 @@ import {port, adopter} from "../../api/ApiSQL";
 import InputForm from '../InputForm/InputForm';
 import PersonalButton from '../PersonalButton/PersonalButton';
 import {connect} from 'react-redux';
+import { UPDATE } from '../../redux/types/userType'
+import { useHistory } from "react-router";
+
 
 function Profile(props) {
+
+  const history = useHistory();
 
   const [user, setUser] = useState({
     username: '',
@@ -63,6 +68,13 @@ function Profile(props) {
     try {
       const id = props.user.id
       let result = await axios.put(`${port}${adopter}/${id}`,  body, auth)
+      if(result){
+        props.dispatch({type: UPDATE, payload: [result.data]})
+        if(result){
+          history.push('/')
+        }
+        
+      }
       console.log(result, "Usuario Updated con exito")
     } catch (error){
       console.log(error, "El usuario no ha podido ser updateado")
