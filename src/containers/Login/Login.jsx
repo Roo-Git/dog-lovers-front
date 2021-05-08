@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
 import PersonalButton from '../../components/PersonalButton/PersonalButton';
 import Footer from "../../components/Footer/Footer";
-import { useHistory } from "react-router";
+import { useHistory, useLocation } from "react-router";
 import {port, adopter, login} from "../../api/ApiSQL";
 import axios from "axios";
 import validate from "../../tools/validate";
@@ -14,6 +14,7 @@ import { ADD_LIST } from "../../redux/types/requestType";
 import { ADD } from "../../redux/types/candidateType";
 
 
+
 function Login(props) {
   
   // HOOKS
@@ -22,7 +23,7 @@ function Login(props) {
 
   const [credentials, setCredentials] = useState({
     email: '',
-    password: ''
+    password: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -47,7 +48,7 @@ function Login(props) {
 
     let body = {
       email: credentials.email,
-      password: credentials.password
+      password: credentials.password,
     };
 
     try{
@@ -59,10 +60,10 @@ function Login(props) {
         props.dispatch({type: ADD_LIST, payload: result.data.user.CareRequests});
         props.dispatch({type: ADD, payload: result.data.user.Candidates});
         console.log(result.data, "RESULT DATA AQUI")
-        if(result.data){
-          history.push('/');
+        if(result.data.user.sitter === true){
+          history.push("/sitter")
         }else{
-          history.push('/')
+          history.push("/owner")
         };
       };
     }catch (error){
