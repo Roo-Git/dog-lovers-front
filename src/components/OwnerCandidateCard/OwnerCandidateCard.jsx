@@ -43,7 +43,7 @@ function OwnerCandidateCard(props) {
       const [confirmCandidate, setConfirmCandidate] = useState ({
         confirmationByOwner : true,
         dog_Id : '',
-        candidate_Id : 1,
+        candidate_Id : '',
         user_Id : ''
       });
 
@@ -117,52 +117,3 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(OwnerCandidateCard);
-
-
-
-
-/*
-
-
-
-------------------------------------------------------------------------------------------
-  const [candidate, setCandidate] = useState({
-    myCandidate: [],
-  });
-
-
-
-  // Function GET CANDIDATE BY ID (Necesito el ID de la care request)
-
-  // Ahora mismo estoy hardcodeando la ID del candidato.
-
-  const getCandidate = async (props) => {
-
-    try{
-      
-      let id = props.user.CareRequests[0]?.id   // ESTO DEBERIA DE FUNCIONAR.
-      console.log(props, "SOY EL ID")
-      let result = await axios.get(`${port}${candidates}/${id}`)
-      setCandidate({...candidate, myCandidate: [result.data]})
-      if(result){
-        console.log(result, "Candidato obtenido con exito.")
-      }
-    } catch(error) {
-      console.log(error, "No se ha podido obtener el candidato con exito")
-    }
-  }
-
-  useEffect(()=>{
-    getCandidate();
-  },[]); // eslint-disable-line react-hooks/exhaustive-deps
-
-
-
-
-
-
-------------------------------------------------------------------------------
-
-
-
-*/
