@@ -1,8 +1,9 @@
 import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux';
-import { candidates, port } from '../../api/ApiSQL';
+import { candidates, port, confirmations } from '../../api/ApiSQL';
 import { ADD } from '../../redux/types/candidateType';
+import { CONVALIDATE } from '../../redux/types/confirmationType';
 
 
 
@@ -23,7 +24,6 @@ function OwnerCandidateCard(props) {
           // props.user.CareRequests.map( request => {return request.id}) 
           let id = props.user.CareRequests[0]?.id
           let result = await axios.get(`${port}${candidates}/${id}`);
-          console.log(result.data, "Candidate ID by careRequest_Id")
           setCandidate({...candidate, myCandidate: result.data});
           if(result.data){
             props.dispatch({type: ADD, payload: [result.data]})
@@ -34,6 +34,49 @@ function OwnerCandidateCard(props) {
         };
         
       };
+
+      //-----------------------------------------------------------------------------------//
+
+      
+      // Confirm Candidate by Owner
+
+      const [confirmCandidate, setConfirmCandidate] = useState ({
+        confirmationByOwner : true,
+        dog_Id : '',
+        candidate_Id : 1,
+        user_Id : ''
+      });
+
+      const handleState = (ev) => {
+        setConfirmCandidate({...confirmCandidate, [ev.target.name]: ev.target.value})
+      };
+      const ConfirmCandidate = async (ev) => {
+
+        ev.preventDefault()
+
+        let body = {
+          confirmationByOwner: true,
+          dog_Id : props.user.id,
+          candidate_Id : props.user.id,
+          user_Id: props.user.id,
+        };
+    
+        console.log(body, "BODY CONFIRMACIÓN")
+    
+        try {
+          
+          let result = await axios.post(`${port}${confirmations}`, body)
+          console.log(result, 'Confirmación creada con exito')
+          if(result){
+            props.dispatch({type: CONVALIDATE, payload: [result.data]})
+          }
+    
+        }catch (error){
+          console.log(error, 'La confirmacióN no ha podido ser creada')
+    
+        }
+      };
+      
 
   return (
     <div className="ownerCandidateCard">
@@ -49,7 +92,7 @@ function OwnerCandidateCard(props) {
                 <p>DOG: {props.dog[0]?.name}</p>
                 <p>ID SITTER: {props.candidate[0]?.sitter_Id}</p>
                 <p className="candidate-post">Candidate Message: {props.candidate[0]?.post}</p>
-                <button className="accept-candidate">Accept</button>
+                <button onChange={handleState} className="accept-candidate" onClick={ConfirmCandidate}>Accept</button>
               </div>
             </div>
             </>
@@ -68,7 +111,8 @@ const mapStateToProps = state => {
       user : state.userReducer.user,
       dog : state.dogReducer.dog,
       request : state.requestReducer.list,
-      candidate  : state.candidateReducer.candidate
+      candidate  : state.candidateReducer.candidate,
+      confirmation : state.confirmationReducer.confirmation
   }
 }
 
