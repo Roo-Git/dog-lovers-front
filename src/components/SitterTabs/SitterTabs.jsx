@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import CareRequestSitter from '../CareRequestSitter/CareRequestSitter';
+import Candidacies from '../Candidacies/Candidacies';
 
 function SitterTabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -28,13 +30,13 @@ function SitterTabs(props) {
       <div
         className={toggleState === 1 ? "content  active-content" : "content"}
       >
-        <h2>Care Requests</h2>
+        <CareRequestSitter/>
       </div>
 
       <div
         className={toggleState === 2 ? "content  active-content" : "content"}
       >
-        <h2>Your Candidacies</h2>
+        <Candidacies/>
       </div>
     </div>
   </div>

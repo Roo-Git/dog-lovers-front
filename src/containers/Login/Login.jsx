@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 import InputForm from "../../components/InputForm/InputForm";
 import PersonalButton from '../../components/PersonalButton/PersonalButton';
 import Footer from "../../components/Footer/Footer";
-import { useHistory, useLocation } from "react-router";
+import { useHistory } from "react-router";
 import {port, adopter, login} from "../../api/ApiSQL";
 import axios from "axios";
 import validate from "../../tools/validate";

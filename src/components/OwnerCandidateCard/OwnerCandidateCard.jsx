@@ -9,6 +9,7 @@ import { CONVALIDATE } from '../../redux/types/confirmationType';
 
 function OwnerCandidateCard(props) {
 
+      // Get Candidate DATA by carerequest_Id
 
       const [candidate, setCandidate] = useState({
         myCandidate: []
