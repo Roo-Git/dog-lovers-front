@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import CareRequestSitter from '../CareRequestSitter/CareRequestSitter';
 import Candidacies from '../Candidacies/Candidacies';
+import Profile from '../Profile/Profile';
 
 function SitterTabs(props) {
   const [toggleState, setToggleState] = useState(1);
@@ -24,6 +25,12 @@ function SitterTabs(props) {
       >
         Your Candidacies
       </button>
+      <button
+        className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+        onClick={() => toggleTab(3)}
+      >
+        Your Profile
+      </button>
     </div>
 
     <div className="content-tabs">
@@ -37,6 +44,11 @@ function SitterTabs(props) {
         className={toggleState === 2 ? "content  active-content" : "content"}
       >
         <Candidacies/>
+      </div>
+      <div
+        className={toggleState === 3 ? "content  active-content" : "content"}
+      >
+        <Profile/>
       </div>
     </div>
   </div>
