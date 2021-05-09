@@ -28,18 +28,34 @@ function Candidacies(props) {
     };
     
   };
-
-
+      let condition = props.confirmation[0]?.confirmationByOwner    
   
   return (
     <div className="candidaciesComponent">
-      
+        {
+          props.candidate[0]?.id 
+          ?
+          <>
+          <h2 className="candidacie-title">Your Candidacie</h2>
+          <p className="candidate-post">YOUR MESSAGE: {props.candidate[0]?.post} </p>
+          <div className="owner-confirmation">{props.confirmation[0]?.confirmationByOwner}</div>
+          <div>
+            { condition ? <p>STATUS: confirmada</p> : <p>STATUS: sin confirmar</p>}
+          </div>
+          </>
+          :
+          <>
+          <h2 className="not-candidacie">Not candidacies yet</h2>
+          </>
+        }
     </div>
   )
 }
 
 const mapStateToProps = state => {
   return {
+      user : state.userReducer.user,
+      candidate: state.candidateReducer.candidate,
       confirmation : state.confirmationReducer.confirmation
   }
 }

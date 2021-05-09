@@ -1,4 +1,4 @@
-import { CONVALIDATE, } from '../types/confirmationType';
+import { CONVALIDATE } from '../types/confirmationType';
 
 const initialState = {
     confirmation: [],
@@ -12,7 +12,6 @@ const candidateReducer = (state = initialState, action) => {
                 ...state,
                 confirmation : action.payload
             }
-
         default :
             return state
     }

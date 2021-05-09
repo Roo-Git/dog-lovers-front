@@ -30,6 +30,7 @@ function MenuMaterialUi(props) {
     props.dispatch({ type: DOGLOGOUT, payload : {}});
     props.dispatch({ type: REQUESTLOGOUT, payload : {}});
     
+    
     setTimeout(()=> {
         history.push('/');
     });
@@ -67,6 +68,7 @@ const mapStateToProps = state => {
       user : state.userReducer.user,
       dog: state.dogReducer.dog,
       request: state.requestReducer.request,
+      confirmation: state.confirmationReducer.confirmation,
   }
 }
 
