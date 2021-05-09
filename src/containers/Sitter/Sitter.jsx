@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import Header from '../../components/Header/Header'
 import Navbar from '../../components/Navbar/Navbar'
+import SitterTabs from '../../components/SitterTabs/SitterTabs';
+import Footer from '../../components/Footer/Footer';
 import {connect} from 'react-redux';
 import { ADD } from '../../redux/types/candidateType';
 import { ADD_LIST } from '../../redux/types/requestType';
@@ -100,6 +102,10 @@ function Sitter (props) {
     <div className="sitterComponent">
       <Header/>
       <Navbar/>
+      <SitterTabs/>
+      <div className="spaceBar"></div>
+      <div className="spaceBar"></div>
+      <Footer/>
 
       {
       

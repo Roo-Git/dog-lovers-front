@@ -8,7 +8,7 @@ function SitterTabs(props) {
   };
 
   return (
-    <div className="container">
+    <div className="containerSitter">
     <div className="bloc-tabs">
       <button
         className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
