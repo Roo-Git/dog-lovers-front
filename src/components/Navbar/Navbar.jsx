@@ -2,7 +2,12 @@ import React from 'react'
 import { useHistory } from 'react-router-dom';
 import PersonalButton from '../PersonalButton/PersonalButton';
 import {connect} from 'react-redux';
-import MenuMaterialUi from '../../components/MenuMaterialUi/MenuMaterialUi';
+import { LOGOUT } from '../../redux/types/userType';
+import { DOGLOGOUT } from '../../redux/types/dogType';
+import { REQUESTLOGOUT } from '../../redux/types/requestType';
+
+
+
 
 function Navbar(props) {
 
@@ -24,6 +29,17 @@ function Navbar(props) {
       },1000);
     };
 
+    const logout = () => {
+      props.dispatch({ type: LOGOUT, payload : {}});
+      props.dispatch({ type: DOGLOGOUT, payload : {}});
+      props.dispatch({ type: REQUESTLOGOUT, payload : {}});
+      
+      
+      setTimeout(()=> {
+          history.push('/');
+      });
+    }
+
 
   return (
     <div className="navbarComponent">
@@ -32,18 +48,24 @@ function Navbar(props) {
         !props.user.id
         ?
         <>
-          <div className="loginNavbar" onClick={() => goToLogin()}>
+          <div className="navbar-space">Hola</div>
+
+          <div className="login-navbar" onClick={() => goToLogin()}>
             <PersonalButton name="Sign in"/>
           </div>
 
-          <div className="registerNavbar" onClick={() => goToChoice()}>
+          <div className="register-navbar" onClick={() => goToChoice()}>
             <PersonalButton name="Sign up"/>
           </div>
         </>
         :
         <>
-          <MenuMaterialUi></MenuMaterialUi>
-          <div className="usernameRedux">Hola! {props.user.username}</div>
+          <div className="navbar-space"></div>
+
+          <div className="logout-navbar" onClick={() => logout()}>
+            <PersonalButton name="Logout"/>
+          </div>
+          <div className="username-redux">Wellcome {props.user.username}</div>
         </>
       }
       
@@ -54,6 +76,8 @@ function Navbar(props) {
 const mapStateToProps = state => {
   return {
       user : state.userReducer.user,
+      dog: state.dogReducer.dog,
+      request: state.requestReducer.request,
   }
 }
 

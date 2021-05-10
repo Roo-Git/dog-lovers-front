@@ -6,24 +6,39 @@
   flex-direction: row-reverse;
 }
 
-.registerNavbar {
+.register-navbar {
   display: flex;
   width: 8%;
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
-.registerNavbar:hover {
+.register-navbar:hover {
   display: flex;
   width: 8%;
-  margin-right: 40px;
+  margin-right: 10px;
+  
 }
 
-.loginNavbar {
+.login-navbar {
   display: flex;
   width: 8%;
-  margin-right: 40px;
+  margin-right: 10px;
 }
 
-.usernameRedux {
+.navbar-space {
+  width: 12%;
+}
+
+.logout-navbar {
+  display: flex;
+  width: 8%;
+  margin-right: 10px;
+}
+
+.username-redux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-size: 18px;
 }

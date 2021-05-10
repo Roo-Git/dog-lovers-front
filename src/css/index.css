@@ -619,7 +619,7 @@ input:not(:focus):valid ~ .floatingLabel {
   flex-direction: row; }
 
 .space-header {
-  width: 10%; }
+  width: 16%; }
 
 .dog-header {
   display: flex;
@@ -641,23 +641,35 @@ input:not(:focus):valid ~ .floatingLabel {
   display: flex;
   flex-direction: row-reverse; }
 
-.registerNavbar {
+.register-navbar {
   display: flex;
   width: 8%;
-  margin-right: 40px; }
+  margin-right: 10px; }
 
-.registerNavbar:hover {
+.register-navbar:hover {
   display: flex;
   width: 8%;
-  margin-right: 40px; }
+  margin-right: 10px; }
 
-.loginNavbar {
+.login-navbar {
   display: flex;
   width: 8%;
-  margin-right: 40px; }
+  margin-right: 10px; }
 
-.usernameRedux {
-  color: white; }
+.navbar-space {
+  width: 12%; }
+
+.logout-navbar {
+  display: flex;
+  width: 8%;
+  margin-right: 10px; }
+
+.username-redux {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 18px; }
 
 .footerComponent {
   display: flex;
