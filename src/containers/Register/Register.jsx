@@ -78,11 +78,26 @@ function Register(props) {
       <div className="registerContainer">
         <Header/>
         <div className="navbarComponent"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
 
-        <form className="registerForm" onSubmit={toggle}>
+        <form className="register-form" onSubmit={toggle}>
+            <h3>invisible</h3>
+            <h3>invisible</h3>
+            <h3>invisible</h3>
+
             <h2>Lover Registration</h2>
-            <p>We need your data</p>
-            <p>For make money</p>
+
+            <h3>invisible</h3>
+
+            <p>It's time to love</p>
+
+            <h3>invisible</h3>
+
+            <p>All dogs.</p>
+
+            <h3>invisible</h3>
             <div className="input">
               <InputForm 
                 type="text"
@@ -105,7 +120,7 @@ function Register(props) {
             </div>
             <div className="input">
               <InputForm 
-                type="text"
+                type="password"
                 title="Password"
                 name="password"
                 onChange={handleState}
@@ -116,12 +131,13 @@ function Register(props) {
             <div className="submit">
               <PersonalButton name="Submit"/> 
             </div>
-            <div className="closeForm"></div>
+            <div className="close-form"></div>
         </form>
 
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+
         <Footer/>
 
 
