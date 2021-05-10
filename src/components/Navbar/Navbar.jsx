@@ -48,7 +48,7 @@ function Navbar(props) {
         !props.user.id
         ?
         <>
-          <div className="navbar-space">Hola</div>
+          <div className="navbar-space"></div>
 
           <div className="login-navbar" onClick={() => goToLogin()}>
             <PersonalButton name="Sign in"/>
