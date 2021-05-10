@@ -22,8 +22,10 @@ function Login(props) {
   const history = useHistory();
 
   const [credentials, setCredentials] = useState({
+
     email: '',
     password: '',
+
   });
 
   const [errors, setErrors] = useState({});
@@ -47,19 +49,22 @@ function Login(props) {
     setErrors(errs);
 
     let body = {
+
       email: credentials.email,
       password: credentials.password,
+
     };
 
     try{
       let result = await axios.post(port+adopter+login, body)
-      console.log(result, "Usuario logeado con exito")
+
       if(result){
+
         props.dispatch({type: LOGIN, payload: result.data});
         props.dispatch({type: SHOW, payload: result.data.user.Dogs});
         props.dispatch({type: ADD_LIST, payload: result.data.user.CareRequests});
         props.dispatch({type: ADD, payload: result.data.user.Candidates});
-        console.log(result.data, "RESULT DATA AQUI")
+
         if(result.data.user.sitter === true){
           history.push("/sitter")
         }else{
@@ -68,22 +73,39 @@ function Login(props) {
       };
     }catch (error){
       setMessage("Email o password incorrecto")
-    }
-
-  }
+    };
+ };
 
     return (
       <div className="loginContainer">
         <Header/>
         <div className="navbarComponent"></div>
 
-        <form className="loginForm" onSubmit={toggle}>
-          <h2>Lover Login</h2>
-          <p>We need your data</p>
-          <p>For make money</p>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+
+        <form className="login-form" onSubmit={toggle}>
+
+            <h3>invisible</h3>
+            <h3>invisible</h3>
+            <h3>invisible</h3>
+
+            <h2>Lover Login</h2>
+
+            <h3>invisible</h3>
+
+            <p>It's time to love</p>
+
+            <h3>invisible</h3>
+
+            <p>All dogs.</p>
+
+            <h3>invisible</h3>
+
           <div className="input">
             <InputForm 
-                type='text'
+                type="input"
                 title="Email"
                 name="email"
                 onChange={handleState}
@@ -94,9 +116,9 @@ function Login(props) {
           </div>
           <div className="input">
             <InputForm 
-                type='text'
+                type="password"
                 title="Password"
-                name='password'
+                name="password"
                 onChange={handleState}
                 error={errors.password?.help ? errors.password.help : message}
                 value={credentials.password}
@@ -106,19 +128,19 @@ function Login(props) {
           <div className="submit">
               <PersonalButton name="Submit"/> 
             </div>
-            <div className="closeForm"></div>
+            <div className="close-form"></div>
         </form>
 
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
-        <div className="spaceBar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
         
         <Footer/>
       </div>
-    )
-}
+    );
+};
 
 const mapStateToProps = state => {
   return {
@@ -126,7 +148,7 @@ const mapStateToProps = state => {
       dog : state.dogReducer.dog,
       request: state.requestReducer.request,
       candidate: state.candidateReducer.candidate
-  }
-}
+  };
+};
 
 export default connect(mapStateToProps)(Login);

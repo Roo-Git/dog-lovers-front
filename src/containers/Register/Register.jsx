@@ -21,10 +21,12 @@ function Register(props) {
   const history = useHistory();
 
   const [user, setUser] = useState({
+    
     username: '',
     email: '',
     password: '',
     sitter: sitter
+
   });
 
   
@@ -38,7 +40,7 @@ function Register(props) {
     if (Object.keys(errors).length > 0) 
     setErrors(validate({ ...user, [e.target.name]: e.target.value}, "register"));
   
- };
+  };
 
  // FUNCTIONS
  
@@ -51,26 +53,25 @@ function Register(props) {
 
     if (Object.keys(errs).length > 0) {
       return;
-    }
+    };
   
     let body = {
       username: user.username,
       email: user.email,
       password: user.password,
       sitter: user.sitter
-    }
-    console.log(body)
+    };
       
     try {
       let result = await axios.post(port+adopter, body)
       console.log(result, "Usuario creado con exito")
       if(result){
         history.push('/login')
-      }
+      };
       
     } catch (error) {
-      console.log(error, "El usuario no ha podido ser creado");
-    }
+      
+    };
 
   };
 
@@ -83,6 +84,7 @@ function Register(props) {
         <div className="space-bar"></div>
 
         <form className="register-form" onSubmit={toggle}>
+
             <h3>invisible</h3>
             <h3>invisible</h3>
             <h3>invisible</h3>
@@ -98,9 +100,10 @@ function Register(props) {
             <p>All dogs.</p>
 
             <h3>invisible</h3>
+
             <div className="input">
               <InputForm 
-                type="text"
+                type="input"
                 title="Username"
                 name="username"
                 onChange={handleState}
@@ -110,7 +113,7 @@ function Register(props) {
             </div>
             <div className="input">
               <InputForm 
-                type="text"
+                type="input"
                 title="Email"
                 name="email"
                 onChange={handleState}
@@ -140,13 +143,9 @@ function Register(props) {
 
         <Footer/>
 
-
-
-
-
       </div>
-    )
-}
+    );
+};
 
 
 export default Register;
