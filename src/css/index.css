@@ -669,7 +669,7 @@ input:not(:focus):valid ~ .floatingLabel {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 18px; }
+  font-size: 18.24px; }
 
 .footerComponent {
   display: flex;
