@@ -22,36 +22,38 @@ function Home(props) {
     <div className="homeContainer">
       <Header/>
       <Navbar/>
-      <div className="mainHome">
+      <div className="home-main">
 
-        <div className="sectionHome">
+        <div className="home-master-section">
 
-          <div className="h1HomeMaster">
+          <div className="home-super-first-section">
 
-              <div className="h1Home">
-                <h1>Do you want to take care of your neighbor's dog?</h1>
-                <h1>Or do you prefer that they take your dog for a walk?</h1>                
+              <div className="home-first-section">
+                <h2>Do you want to take care of your neighbor's dog?</h2>
+                <br />
+                <h2>Or do you prefer that they take your dog for a walk?</h2>                
               </div>
 
-              <img className="dogsHome" src={dogsHome} alt="dogsHome"/>
+              <img className="home-dogs-img" src={dogsHome} alt="dogsHome"/>
 
           </div>
 
-          <div className="h2HomeMaster">
+          <div className="home-super-second-section">
 
-              <div className="h2Home">
+              <div className="home-second-section">
                 <h2>Dog lovers is your corner to make new friends, new pals.</h2>
+                <br />
                 <h2>While you finish work, go on vacation, or walk someone else's dog.</h2>
               </div>
 
-              <img className="loverDog" src={loverDog} alt="LoverDog"/>
+              <img className="home-lover-img" src={loverDog} alt="LoverDog"/>
               
           </div>
 
         </div>
 
       </div>
-      <div className="spaceBar"></div>
+      <div className="space-bar"></div>
       <Footer/>  
     </div>
   )

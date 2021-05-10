@@ -10,7 +10,7 @@
   margin: 1rem;
 }
 
-.mainHome {
+.home-main {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
   color: white; 
 }
 
-.sectionHome {
+.home-master-section {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
@@ -28,7 +28,7 @@
   align-items: center;
 }
 
-.h1HomeMaster {
+.home-super-first-section {
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -38,8 +38,9 @@
   border-radius: $border-radius;
 }
 
-.h1Home {
+.home-first-section{
   margin-top: 40px;
+  font-size: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,13 +48,13 @@
 }
 
 
-.dogsHome{
+.home-dogs-img{
   width: 50%;
 }
 
 
 
-.h2HomeMaster{
+.home-super-second-section{
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -64,19 +65,20 @@
   margin-top: 40px;
 }
 
-.h2Home{
+.home-second-section{
   margin-top: 40px;
+  font-size: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.loverDog{
+.home-lover-img{
   width: 60%;
 }
 
-.spaceBar{
+.space-bar{
   width: 100%;
   height: 40px;
   background-color: #f3d394;
