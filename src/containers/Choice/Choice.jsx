@@ -20,27 +20,31 @@ function Choice(props) {
       <Header/>
       <div className="navbarComponent"></div>
 
-      <div className="mainChoice">
+      <div className="main-choice">
 
-        <div className="spaceBar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
 
-        <div className="sectionImgMaster">
+        <div className="choice-master-section">
           
-          <Link className="sitterChoice" to="/register?sitter=true">I'm a baby sitter!</Link>        
+          <Link className="choice-sitter" to="/register?sitter=true">I'm a baby sitter!</Link>        
           <img className="sitter" src={sitter} alt="sitter"/>
           <img className="owner" src={owner} alt="owner"/>
-          <Link className="ownerChoice" to="/register">I'm a dog owner!</Link>
+          <Link className="choice-owner" to="/register">I'm a dog owner!</Link>
           
         </div>
 
         <div className="navbarComponent"></div>
+        <div className="space-bar"></div>
 
-        <div className="h1Choice">
-          <h1>Cause we are lovers,</h1>
-          <h1>We love dogs.</h1>
+        <div className="choice-second-section">
+          <h2>Cause we are lovers,</h2>
+          <br />
+          <h2>We love dogs.</h2>
         </div>
 
-        <div className="spaceBar"></div>
+        <div className="space-bar"></div>
+        <div className="space-bar"></div>
 
         
       </div>
