@@ -29,6 +29,9 @@ function Home(props) {
           <div className="home-super-first-section">
 
               <div className="home-first-section">
+
+                <h3>invisible</h3>
+
                 <h2>Do you want to take care of your neighbor's dog?</h2>
                 <br />
                 <h2>Or do you prefer that they take your dog for a walk?</h2>                
@@ -41,9 +44,15 @@ function Home(props) {
           <div className="home-super-second-section">
 
               <div className="home-second-section">
+
+                <h3>invisible</h3>
+
                 <h2>Dog lovers is your corner to make new friends, new pals.</h2>
                 <br />
                 <h2>While you finish work, go on vacation, or walk someone else's dog.</h2>
+
+                <h3>invisible</h3>
+
               </div>
 
               <img className="home-lover-img" src={loverDog} alt="LoverDog"/>
