@@ -20,7 +20,7 @@ function Header(props) {
     <div className="headerComponent">
       <div className="space-header"></div>
       <img className="dog-header" src={dogHeader} alt="dog-header" onClick={goToBeginning}/>
-      <div className="title">Dog Lovers</div>
+      <h1 className="title">Dog Lovers</h1>
     </div>
   )
 }
