@@ -1,0 +1,22 @@
+.sitterComponent{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sitter-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFBF42;
+  width: 70%;
+  color: white;
+}
+
+.sitter-h2{
+  font-size: 50px;
+}

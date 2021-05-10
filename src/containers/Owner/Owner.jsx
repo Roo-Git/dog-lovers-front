@@ -14,7 +14,7 @@ function Owner(props) {
   
   return (
     
-    <div className="ownerContainer">
+    <div className="ownerComponent">
       <Header/>
       <Navbar/>
       <div className="space-bar"></div>

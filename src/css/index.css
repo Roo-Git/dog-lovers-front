@@ -557,7 +557,7 @@ h3 {
   border-radius: 0.3em;
   font-size: 50px; }
 
-.ownerContainer {
+.ownerComponent {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -574,6 +574,25 @@ h3 {
   color: white; }
 
 .owner-h2 {
+  font-size: 50px; }
+
+.sitterComponent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+.sitter-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFBF42;
+  width: 70%;
+  color: white; }
+
+.sitter-h2 {
   font-size: 50px; }
 
 /*Components*/
