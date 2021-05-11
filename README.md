@@ -335,7 +335,7 @@ Goodbye Geeks.
 
   - [@Giancarlo Rondo](https://www.linkedin.com/in/gianrondo/)
 
-  - [@Victor San ](hhttps://www.linkedin.com/in/vic-san/)
+  - [@Victor San](https://www.linkedin.com/in/vic-san/)
 
   - [@Roberto Sánchez ](https://www.linkedin.com/in/rob-moyano/)
 
