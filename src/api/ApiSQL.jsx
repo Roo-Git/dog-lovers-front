@@ -1,4 +1,4 @@
-export const port = 'https://git.heroku.com/dog-love-backend-heroku.git';
+export const port = 'https://dog-love-backend-heroku.herokuapp.com';
 export const adopter = '/users';
 export const login = '/login';
 export const query = '?query=';
