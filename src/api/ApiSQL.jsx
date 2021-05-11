@@ -1,4 +1,4 @@
-export const port = 'http://localhost:3000';
+export const port = 'https://git.heroku.com/dog-love-backend-heroku.git';
 export const adopter = '/users';
 export const login = '/login';
 export const query = '?query=';
