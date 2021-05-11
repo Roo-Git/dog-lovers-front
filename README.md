@@ -252,42 +252,52 @@ Improve the code and user flow.
 
 
 
-<img src="public/gif/first.gif" alt="First" >
 
-<br>
-<br>
-
-<img src="public/gif/second.gif" alt="Second" >
-
-<br>
-<br>
-
-<img src="public/gif/third.gif" alt="Third" >
-
-<br>
-<br>
-
-<br>
-<br>
-
-<img src="public/gif/four.gif" alt="Four" >
-
-<br>
-<br>
-
-<br>
-<br>
-
-<img src="public/gif/five.gif" alt="Five" >
-
-<br>
-<br>
 
 
 
 
 
 ## APP OVERVIEW
+
+<img src="gif/first.gif" alt="First" >
+
+<br>
+<br>
+
+<img src="gif/second.gif" alt="Second" >
+
+<br>
+<br>
+
+<img src="gif/third.gif" alt="Third" >
+
+<br>
+<br>
+
+<br>
+<br>
+
+<img src="gif/four.gif" alt="Four" >
+
+<br>
+<br>
+
+<br>
+<br>
+
+<img src="gif/five.gif" alt="Five" >
+
+<br>
+<br>
+
+<br>
+<br>
+
+<img src="gif/five.gif" alt="Five" >
+
+<br>
+<br>
 
 <br>
 
